@@ -1,0 +1,83 @@
+<h2 class="Date">10/3/2016</h2>
+
+<h2 class="NotesTitle">Get Ready for Stage 2</h2>
+    Concepts, Tools, and setting up workspace...
+
+<h2 class="NotesTitle">Interview with Mike Wales</h2>
+    Being comfortable makes everything easier and more efficient
+
+<h2 class="NotesTitle">How to Install Python (Windows)</h2>
+    This program uses Python 2 :( oh well...
+    <p>Re-installed Python 2.7 to make sure I have everything set properly for this course</p>
+    <p>Will run my Python files via Powershell:
+        cd\
+
+        then
+
+        cd LearnPython\Udacity\Stage-2\
+
+        then python filename.py
+    </p>
+
+<h2 class="Date">10/4/2016</h2>
+
+<h2 class="NotesTitle">Setting Up Your Workspace (1 and 2)</h2>
+    You can download a "package" to enable a feature similar to "Build" in Sublime in your code editor or choice... or just use the command line (I'll do this)
+    <br><br>To use <b>Code Runner</b> in Visual Studio Code, press Control+Alt+N, to stop running code press Control+Alt+M
+    <br><br>Use # symbol to add notes in Python
+    <br><br>Get in habit of running code this way!
+
+<h2 class="NotesTitle">The Command Line</h2>
+    <b>Git Bash</b>
+    <br>MinTTY requires command line to be written like this:
+    <br>$ winpty python file_name.py
+    <br><b>Don't forget this!!</b>
+    <br><br>Also: Windows users need to use <b>start</b> command instead of <b>open</b> to open a file in its default program.
+
+<h2 class="NotesTitle">Navigating Directories with a GUI</h2>
+    <b>Graphical User Interface (GUI or "gwee")</b> - visual way of interacting with computer with windows, buttons, mouse, etc.
+
+<h2 class="NotesTitle">CLI (Navigating, etc.)</h2>
+    <b>Command Line Interface (CLI)</b> - e.x. Terminal, Git Bash, Powershell, etc.
+    <ul>
+        <li><b>pwd = print working directory</b>, "where am I?", will print out path to current directory (what GUI calls a folder)
+            <br>When CLI is first opened it starts in the <b>home directory</b> (in my case this is C:/Users/bjerickson)</li>
+        <li><b>ls = list</b>, helps us view the contents of a directory</li>
+        <li><b>start</b>, use "start ." to view current directory's contents in a window, or use "start directory_name" to open another directory (folder)</li>
+        <li><b>cd = change directories</b>, used to "move" somewhere else, "cd Desktop" will move to Desktop directory (folder) if it's within current directory, "cd .." will move up one directory, "cd" will return to home directory, "cd FolderA/FolderAb/FolderAbC" can accomplish several steps at once (this is referred to as "chaining" the directories together)</li>
+        <li><b>mkdir = make directory</b> ("make-dur" or "make-deer"), creates a new folder with the name we provide: "mk dir animals" will make new folder called animals
+            <br>to make folder "rodents" inside of "animals":
+            <br> cd into animals than mkdir rodents
+            <br>OR from Desktop, "mkdir animals/rodents"
+            <br><br>to make several new directories, separate them with a space: "mkdir cats dogs marsupials"
+            <br>for this reason, <b>it is not a good idea to put spaces in your directory or filenames!!</b></li>
+        <li><b>touch</b>, creates new files in one step, ex "touch first_file.txt" will create brand new, empty text file, you can verify that it was made using ls, can make a file in a directory other than current directory by specifying filepath (as with ls and cd), and to create multiple files separate with spaces (as with mkdir)</li>
+        <li><b>rm</b> is used to delete a file completely (not move it to the trash), can delete multiple files by separating names with spaces as before</li>
+        <li>There are two ways to remove directories:
+            <br><b>rmdir</b>, "rmdir directory_name" deletes a directory, but only works if it's empty
+            <br><b>rm -rf (be careful with this one!), deletes a non-empty directory where -rf = recursive force, this is potentially very dangerous!!!!!!!</b></li>
+        <li><b>Remember that to run a Python file in Git Bash you must include winpty:
+            "winpty python file_name.py"</b></li>
+    </ul>
+    A summary of these new commands can be found <a href="https://classroom.udacity.com/nanodegrees/nd000/parts/0001345403/modules/356813882475460/lessons/4137319262/concepts/63975772210923">here</a>.
+    
+<h2 class="NotesTitle">Ready, Set, Go!</h2>
+    From here on, workspace = browser, code editor, and terminal (Git Bash or other)
+
+<h2 class="NotesTitle">Welcome to Stage 2</h2>
+    We will make a MadLibs games
+    
+<h2 class="NotesTitle">Why You'll Make It</h2>
+    Learn to use "variables", to write "functions", and to think like a programmer
+
+<h2 class="NotesTitle">How You'll Make It</h2>
+    Using Lessons 2.1-2.7 and the subsequent Work Session
+
+    <p><b>From here on, instead of naming each subsection individually, I will name the larger sections and just link directly to parts that are tricky or that I may need to review</b></p>
+
+<h2 class="NotesTitle">Introduction to Serious Programming</h2>
+    Computer Science is about how to solve problems via a precise set of steps
+    <br>"Crawling webpages" finds data, starts from "seed" page to find links to other pages which can themselves have links to other pages, etc.
+    <br><br><b>What is programming?</b>, the core of computer science, to change a toaster's behavior you'd have to mechanically alter it, computers can't do anything without a program, it tells the computer what to do (and it can do any computation!), program must be a very precise sequence of steps, but computer can exute those steps VERY quickly
+    <br><br><b>Python</b>, named for Monty Python, high level language, Python code runs via Python program (interpreter)
+    <br><br>

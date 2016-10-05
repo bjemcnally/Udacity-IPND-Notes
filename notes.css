@@ -1,0 +1,190 @@
+/* This is a partial list of the classes used in the HTML (for bookeeping purposes):
+    NotesMaster
+    StageNotes
+    Stage0 and Stage1
+    StageTitle (h2)
+    NotesTitle (h3)
+    InterestingNotes
+    CodeParent
+        CodeLeft
+        CodeRight
+    Code (like CodeParent without children)
+
+Also changed the color scheme, new colors:
+    #FDFEF0 (almost white)
+    #AEE4D6 (light blue)
+    #7AA7AD (dark blue)
+    #BFB9AD (sand) -- didn't end up using this color after all   
+*/
+
+/* this is for testing and verifying div alignment as necessary
+
+* {
+    outline: 1px solid red !important;
+}
+
+*/
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box; 
+    box-sizing: border-box;
+}
+
+h3 {
+    color: gray;
+}
+
+.NotesTitle {
+    text-align: center;
+}
+
+a:link {
+    color: #7AA7AD;
+    text-decoration: none; /*this removes the line from under links*/
+}
+
+a:visited {
+    color: #7AA7AD;
+    text-decoration: none;
+}
+
+body {
+    background-color: #FDFEF0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+h1 {
+    color: #FDFEF0;
+    /*text-align: center;*/
+    font-size: 25px;
+    text-shadow: 2px 2px 4px gray;
+    font-variant: small-caps;
+}
+
+h2 {
+    color: #FDFEF0;
+    text-align: center;
+    font-size: 18px;
+}
+
+.Navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    /*right: 0;*/ /*changed navigation pane from top to left */
+    bottom: 0;
+    z-index: 9999;
+    width: auto;
+    /* height: 100px; if I remove the set height will it fit to content? YES*/
+    background-color: #FDFEF0;
+    margin-left: 20px;
+    margin-right: 10px;
+    /*text-decoration: none; this did not work to remove lines from underneath these links only :( */
+}
+
+.NotesMaster {
+    background-color: #FDFEF0;
+    margin-top: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 100px;
+    padding-right: 100px;
+    margin-left: 250px;
+    margin-right: 30px;
+    color: grey;
+}
+
+.StageTitle {
+    color: #7AA7AD;
+    background-color: #AEE4D6;
+    /*border: 3px #3b3a36;
+    border-style: solid; */
+    border-radius: 15px;
+    margin: auto;
+    padding: 10px;
+    max-width: 30%;
+    box-shadow: 5px 5px 1px #888888;
+}
+
+.Nav {
+    /*display: -webkit-flex;
+    display: flex;*/ /*put buttons in a col instead of row */ 
+    width: 40%;
+    justify-content: space-around;
+    margin: auto;
+    font-size: 12px;
+    /*align-content: right;*/
+}
+
+.Button {
+    /*border: 1px #FDFEF0;
+    border-style: solid;*/
+    border-radius: 15px;
+    padding: 10px;
+    margin: 10px;
+    background-color: #AEE4D6;
+    color: grey;
+    text-align: center;
+    box-shadow: 2px 2px 1px gray;
+    max-width: 200px;
+    font-size: 12px;
+}
+
+.InterestingNotes {
+    background-color: #c0dfd9;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.Code {
+    background-color: #b3c2bf;
+    font-family: Courier New, Courier, monospace;
+    padding: 30px;
+    border-radius: 10px;
+    border: 2px #FDFEF0;
+    border-style: solid;
+    margin: 5px;
+}
+
+.CodeParent {
+    background-color: #b3c2bf;
+    padding: 30px;
+    border-radius: 10px;
+    display: -webkit-flex;
+    display: flex;
+    margin: 5px;
+}
+
+.CodeLeft {
+    margin: 0 auto;
+    font-family: Courier New, Courier, monospace;
+}
+
+.CodeRight {
+    background-color: #e9ece5;
+    margin: 0 auto;
+    border-radius: 10px;
+    padding: 20px;
+    border-style: dotted;
+    border-color: #c0dfd9;
+    border-width: 10px;
+    max-width: 50%;
+}
+
+.ImageDescription {
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+}
+
+.ImageLeft {
+    margin: 30px;
+}
+
+.ImageRight {
+    margin: 30px;
+}
