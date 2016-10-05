@@ -1,6 +1,6 @@
 # Udacity-IPND-Notes
-My Personal Notes from Udacity Intro to Programming Nanodegree Program
+My Personal Notes from Udacity Intro to Programming Nanodegree Program formatted as a basic website
 
-(sssentially a continually updated version of the Stage 1 project)
+(essentially a continually updated version of the Stage 1 project)
 
 by bjemcnally | bjemcnally@gmail.com
