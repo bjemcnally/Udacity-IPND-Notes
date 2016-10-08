@@ -1,424 +1,359 @@
 <!DOCTYPE html>
 <html lang="en"><!-- added lang="en" because the validator told me to...? -->
 <head>
-    <title>Intro to Programming: Stage 1 Project by bjemcnally</title>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="notes.css">
+  <title>Intro to Programming: Stage 1 Project by bjemcnally</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="stage1-project.css">
 </head>
     
 <body>
-    <div class="Navigation">
-        <a href="http://www.udacity.com"><img src="udacity.png" alt="Udacity Icon" width="200" height="100"></a>
-        <h1>Intro to Programming
-            <br>Nanodegree
-        </h1>
-        <h3 class="NotesTitle">Notes from Stages 0-1
-            <br><br>Stage 1 Project
-            <br><img src="waves.png" alt="waves" width="100" height="100">
-            <br>bjemcnally | October 2016</h3>
-        <!-- <h2>
-            Reformatted, corrected, and summarized for Stage 1 Reflections prior to Work Session 2
-        </h2> -->
-        <h1>Use these buttons
-            <br> to navigate:</h1>
-        <div class="Nav">
-            <div class="Button">
-                <a href="#Welcome">Welcome</a>
-            </div>
-            <div class="Button">
-                <a href="#ZeroStage">Stage 0</a>
-            </div>
-            <div class="Button">
-                <a href="#FirstStage">Stage 1</a>
-            </div>
-            <div class="Button">
-                <a href="#Extras">Extras</a>
-            </div>
-        </div>
-        <h3 class="NotesTitle">Comments & 
-            <br>Suggestions Welcome!</h3>
-
+    
+<div class="Navigation">
+  <a href="http://www.udacity.com" target="_blank"><img src="udacity.png" alt="Udacity Icon" width="200" height="100"></a>
+  <h1>Intro to Programming Nanodegree: Stage 1 Project</h1>
+  <img src="waves.png" alt="waves" width="100" height="100" class="Center">
+  <h3 class="NotesTitle">bjemcnally | October 2016</h3>
+  <h3 class="NotesTitle">Use these buttons to navigate:</h3>
+  <div class="Nav">
+    <div class="Button">
+      <a href="#Welcome">Welcome</a>
     </div>
+    <div class="Button">
+      <a href="#ZeroStage">Stage 0</a>
+    </div>
+    <div class="Button">
+      <a href="#FirstStage">Stage 1</a>
+    </div>
+    <div class="Button">
+      <a href="#Extras">Extras</a>
+    </div>
+  </div>
+    <h3 class="NotesTitle">Comments &amp; Suggestions Welcome!</h3>
+</div>
 
-    <div class="NotesMaster"><!-- this is essentially leftover from an earlier version of this assignment where I did not include a static navigation pane -->
-        <div class="StageNotes"><!-- this one surrounds all of the notes -->
+<div class="NotesMaster"><!-- this one surrounds all of the notes -->
 
-        <div class="Welcome">
-            <h2 class="StageTitle"  id="Welcome">Welcome!</h2>
-            <div class="ImageDescription">
-                <div class="ImageLeft">
-                    <p>
-                        Hello! This is my first attempt at a website in over 15 years! <a href="http://nsyncfandom.tripod.com/">This</a> and <a href="https://web.archive.org/web/20010803065036/http://www.geocities.com/nsyncfandom/">this</a> are all that's left of my last website (LOL). I have learned a lot about HTML and CSS during this Nanodegree and I can't wait to move on to the next topic. 
-                        <br><br>It should be noted that I found the image on the right via Etsy and it is not my image. However, I thought it was pretty so I used it as color inspiration for this assignment. It should also be noted that these are my notes and may not be particularly helpful to anyone else. If you're interested in finding out more information about Udacity's Intro to Programming Nanodegree, click <a href="https://www.udacity.com/course/intro-to-programming-nanodegree--nd000">here</a>.
-                        <br><br>For best results, and because I haven't yet bothered to check this in other browsers, this website should be viewed in Chrome at 1600 x 900 resolution.
-                        <br><br>Thanks for visiting! 
-                        <br>- bjemcnally
-                    </p>
-                </div>
-                <div class="ImageRight">
-                    <img src="https://img0.etsystatic.com/033/0/6644951/il_340x270.512714416_lycy.jpg" alt="Ocean Image from Etsy">
-                </div>
-            </div>
-        </div>    
+  <div><!-- this surrounds all of the notes Welcome message -->
+    <h2 class="StageTitle"  id="Welcome">Welcome!</h2>
+      <div class="ImageDescription">
+        <div class="Image">
+          <p>Hello! This is my first attempt at a website in over 15 years! <a href="http://nsyncfandom.tripod.com/" target="_blank">This</a> and <a href="https://web.archive.org/web/20010803065036/http://www.geocities.com/nsyncfandom/" target="_blank">this</a> are all that's left of my last website (LOL). I have learned a lot about HTML and CSS during this Nanodegree and I can't wait to move on to the next topic.</p>
+          <p>It should be noted that I found the image on the right via Etsy and it is not my image. However, I thought it was pretty so I used it as color inspiration for this project. It should also be noted that these are my personal notes and may not be particularly helpful to anyone else. If you're interested in finding out more information about Udacity's Intro to Programming Nanodegree, click <a href="https://www.udacity.com/course/intro-to-programming-nanodegree--nd000">here</a>.</p>
+          <p>For best results this website should be viewed in Chrome at 1600 x 900 resolution.</p>
+          <p>Thanks for visiting! 
+            <br>- bjemcnally</p>
+        </div>
+        <div class="Image">
+          <img src="https://img0.etsystatic.com/033/0/6644951/il_340x270.512714416_lycy.jpg" alt="Ocean Image from Etsy">
+        </div>
+      </div>
+  </div><!-- this ends Welcome message -->
 
-        <div class="Stage0"><!-- this div just allows me to collapse this section in Visual Studio Code -->
-        
-            <h2 class="StageTitle" id="ZeroStage">Stage 0: Here we go!</h2><!-- these notes and their formatting are carried over from the first Reflection assignment and are therefore formatted a little differently than those for Stage 1 -->
-
-            <p>HTML is <b>reasonably straightforward</b></p>
-
-            <p>The '<b>em</b>' tag stands for emphasis and makes things <em>italic</em>.</p>
-            
-            <p>I am going to learn to love <a href="http://www.w3c.org/html">HTML</a>.
-            <br>The '<b>a</b>' in 'a href'' stands for anchor, must define attributes within quotes</p>
-            
-            <p>The '<b>img</b>' tag has a second attribute (alt) that will display text if image fails to load.
-            <br>Like this: <img src="nope.jpg" alt="nope!">
-            <br>img does not have a closing tag (i.e. is a '<b>void tag</b>') because it has no content
-            <br>Images appear <img src="http://s7d2.scene7.com/is/image/woodstream/hh-animals-chipmunk-3?$LearningPgAnimalThumbnail$" alt="chipmunk!"> in line with text</p>
-            
-            <p>Whitespace: all whitespace in HTML turns into a single space
-            <br><br>'<b>br</b>' is another void tag = break
-            <br>it ends a line (it is an <em>inline element</em>, more on this below)
-            <br><br>'<b>p</b>' stands for paragraph, it <em><b>has a closing tag</b></em>
-            <br>it essentially makes an invisible box (it is a <em>block element</em>)
-            <br><br>Another thing about whitespace:
-            <br>This: hello world!
-            <br> and this: hello
-            
+  <div><!-- this surrounds Stage0 notes -->
+    <h2 class="StageTitle" id="ZeroStage">Stage 0: Here we go!</h2>
+      <p>HTML is <b>reasonably straightforward</b></p>
+      <p>The '<b>em</b>' tag stands for emphasis and makes things <em>italic</em>.</p>
+      <p>I am going to learn to love <a href="http://www.w3c.org/html">HTML</a>.</p>
+      <p>The '<b>a</b>' in 'a href'' stands for anchor, must define attributes within quotes</p>
+      <p>The '<b>img</b>' tag has a second attribute (alt) that will display text if image fails to load.
+        <br>Like this: <img src="nope.jpg" alt="This image does not exist">
+        <br>img does not have a closing tag (i.e. is a '<b>void tag</b>') because it has no content
+        <br>Images appear <img src="http://s7d2.scene7.com/is/image/woodstream/hh-animals-chipmunk-3?$LearningPgAnimalThumbnail$" alt="chipmunk!"> in line with text</p>
+      <p>Whitespace: all whitespace in HTML turns into a single space</p>
+      <p>'<b>br</b>' is another void tag = break
+        <br>it ends a line (it is an <em>inline element</em>, more on this below)</p>
+      <p>'<b>p</b>' stands for paragraph, it <em><b>has a closing tag</b></em>
+        <br>it essentially makes an invisible box (it is a <em>block element</em>)</p>
+      <p>Another thing about whitespace:
+        <br>This: hello world!
+        <br> and this: hello
             
             world!
-            <br>Look the same</p>
+        <br>Look the same despite the white space in the HTML</p>
+      <p>Two new elements: span / div
+        <br>'<b>span</b>' is inline
+        <br>'<b>div</b>'' is block (i.e. it creates a box around its content)</p>
+      <p>'<b>strong</b>' element is another inline element
+      <p>'<b>form</b>' is another example of a block element</p>
+      <p>Document structure:</p>
+        <div class="CodeParent">
+          <div class="CodeLeft">
+            &lt;!DOCTYPE html&gt;<br />
+            &lt;html&gt;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;head&gt;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;Page Title&lt;/title&gt;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;meta charset="UTF-8"&gt;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;link rel="stylesheet" href="filename.css"&gt;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;/head&gt;<br />
+            <br />
+            &lt;body&gt;<br />
+            <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;etc.<br />
+            <br />
+            &lt;/body&gt;<br />
+            &lt;/html&gt;
+          </div>
+          <div class="CodeRight">
+            <p>This is how your HTML should begin.</p>
+            <p>'title' goes inside 'head' tag</p>
+            <p>everything interesting goes inside the 'body' tag</p>
+            <p><em>remember to close each!</em> (i.e. use closing tag with '/')</p>
+            <p>For more info on document structure, go <a href="https://classroom.udacity.com/nanodegrees/nd000/parts/0001345401/modules/385165862675460/lessons/3873828673/concepts/71254996060923#">here</a>.</p>
+          </div>
+        </div>
+        <div class="InterestingNotes">
+          <p>Things to look up:
+          <br>Q: What is the difference between 'b' and 'strong'?
+          <br>A: They have the same effect on normal web browsing. 'Strong' indicates that the text should stand out from that around it (not how), while 'b' specifically makes the text bold. <a href="http://stackoverflow.com/questions/271743/whats-the-difference-between-b-and-strong-i-and-em">Source</a>.</p>
+        </div>
+  </div><!-- this closes the div around Stage 0 -->
+  
+  <div><!-- this surrounds Stage 1 notes -->
+    <h2 class="StageTitle" id="FirstStage">Stage 1</h2>
+    <h3 class="NotesTitle">html, css, and javascript go into web development</h3>
+      <p>analogies:
+        <br>html = <em>structure of house, e.x. walls</em>
+        <br>css = <em>design, e.x. carpet/wall cover</em>
+        <br>javascript = <em>interactive components, e.x. TV remote</em></p>
+      <p>Use More tools > Developer tools to visualize inner workings of various websites in Chrome
+        <br>also: right click --> inspect element will open developer tools in exact location where image/element is in tree/structure
+        <br>you can play with the appearance of the site in DevTools, to return to original just refresh the page</p>
 
-            <p>Two new elements: span / div
-            <br>'<b>span</b>' is inline
-            <br>'<b>div</b>'' is block (i.e. it creates a box around its content)</p>
+    <h3 class="NotesTitle">HTML has syntax + rules</h3>
+	  <p>tags --> elements (from start tag to end plus content within) --> tree
+	    <br>tags have names or types
+	    <br>tags can have attributes with particular values</p>
 
-            <br><br>Here I will test the two new elements introduced in the quiz:
-            <!-- this is not meant to actually use either element, just to check if they are inline or block elements -->
-            <br>Trying out '<b>strong</b>' element: <strong>TEST</strong>
-            <br>Result: 'strong' is inline
-            <br>Trying out '<b>form</b>' element: <form>TEST</form>
-            <br>Result: 'form' is block
+    <h3 class="NotesTitle">CSS (cascading style sheets) also has syntax and rules</h3>
+	  <p>changes how elements look on a page (font size, color, etc)
+	    <br>e.x. "all h1 in class 'article'' should have text color blue"</p>
 
-            <br><br>Document structure:
-                <div class="CodeParent">
-                    <div class="CodeLeft">
-                        &lt;!DOCTYPE html&gt;<br />
-                        &lt;html&gt;<br />
-                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;head&gt;<br />
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;Page Title&lt;/title&gt;<br />
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;meta charset="UTF-8"&gt;<br />
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;link rel="stylesheet" href="filename.css"&gt;<br />
-                        &nbsp;&nbsp;&nbsp;&nbsp;&lt;/head&gt;<br />
-                        <br />
-                        &lt;body&gt;<br />
-                        <br />
-                        &nbsp;&nbsp;&nbsp;&nbsp;etc.<br />
-                        <br />
-                        &lt;/body&gt;<br />
-                        &lt;/html&gt;
-                        </div>
+    <h3 class="NotesTitle">DOM, (document object model) built by browser from HTML doc</h3>
+      <p>didn't take any notes on this part...</p>
 
-                    <div class="CodeRight">
-                        These this is how your HTML should begin.
-                        <br><br>'title' goes inside 'head' tag
-                        <br><br>everything interesting goes inside the 'body' tag
-                        <br><br><em>remember to close each!</em> (i.e. use closing tag with '/')
-                        <br><br>For more info on document structure, go 
-                        <a href="https://classroom.udacity.com/nanodegrees/nd000/parts/0001345401/modules/385165862675460/lessons/3873828673/concepts/71254996060923#">here</a>.
-                    </div>
-                </div>
-           
-            <div class="InterestingNotes">
-                <p>Things to look up:
-                <br>Q: What is the difference between 'b' and 'strong'?
-                <br>A: They have the same effect on normal web browsing. 'Strong' indicates that the text should stand out from that around it (not how), while 'b' specifically makes the text bold. <a href="http://stackoverflow.com/questions/271743/whats-the-difference-between-b-and-strong-i-and-em">Source</a>.
-                </p>
+	<h3 class="NotesTitle">Boxes to HTML</h3>
+	  <p>'<b>div</b>' tags are used to define boxes (and boxes within boxes via tree/structure)
+	    <br>when defining boxes, give each element a class attribute so you can assign style later ('labels on boxes'), boxes/tags can have several labels
+        <br><b>DO NOT FORGET TO ADD THESE (as necessary)</b>
+        <br>class attribute should be at least partially descriptive (e.x. 'title') and not just 'box1', etc.</p>
+
+    <h3 class="NotesTitle">Cascading style sheets (CSS)</h3>
+      <p>there can be several CSS files ('<b>sheets</b>')' referenced in HTML
+        <br>'cascading' means that most specific rule applies</p>
+      <p>'<b>selector</b>' - defines elements that a particular style will apply to (recall that an element is an HTML 'tag' plus its content)
+        <br>e.x. an HTML tag (all paragraphs, p), a class as defined in HTML (.classname, to specify certain paragraphs)</p>
+      <p>More on this: you can make all paragraphs the same font size, but certain paragraphs different colors by specifying classes
+        <br>write style in the form: attribute colon value
+        <br>e.x. color: red
+        <br>for more information on attributes visit:
+        <br><a href="http://css-tricks.com/how-css-selectors-work/">How CSS Selectors Work</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference">MDN CSS Reference</a></p>
+      <p>font-style is a <em>property</em> or <em>attribute</em> that has multiple potential <em>values</em> (e.x. normal, italic, oblique), syntax: 
+        <br>font-style: normal (i.e. attribute colon value, this is a <em>declaration</em> or <em>rule</em>)</p>
+      <p>This information (and more) is nicely summarized <a href="https://classroom.udacity.com/nanodegrees/nd000/parts/0001345402/modules/383612889175460/lessons/4131369051/concepts/36111086980923">here</a>.</p>
+      <p>Useful info:
+        <br>There are 3 ways to incorporate CSS styling
+        <br>Add '<b>style</b>' element within '<b>head</b>' element in your HTML:</p>
+        <div class="CodeParent">
+          <div class="CodeLeft">
+            <p>&lt;head&gt;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;style&gt;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;div {<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background-color : red;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;/style&gt;<br />
+            &lt;/head&gt;<br /></p>
+          </div>
+          <div class="CodeRight">
+            <p>This will give the div a red background.</p>
+          </div>
+        </div>
+        <p>Link to separate CSS file:</p>
+        <div class="CodeParent">
+          <div class="CodeLeft">
+            <p>
+            &lt;head&gt;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;link rel="stylesheet" href="main.css"&gt;<br />
+            &lt;/head&gt;<br /></p>
+          </div>
+          <div class="CodeRight">
+            <p>This was the method used for this page!</p>
+          </div>
+        </div>
+        <p>In line with HTML code (<em>this is frowed upon because it leads to lots of repeated code so I won't bother to show it here!!</em>)</p>
+
+        <div class="InterestingNotes">
+          <p><a href="https://discussions.udacity.com/t/stage-1-webcasts/16000/4">This</a> is the transcript from some office hours held back in March. It covers lots of important stuff, like:</p>
+          <ul>
+            <li>"Use '<b>outline</b>' attribute to put an outline over elements to visually see how 'div' and 'span' boxes are interacting with one another"</li>
+            <li>'div's are mainly used to group items together to logically organize code so we can add styling to a whole block of code at once (thereby avoiding repetition)</li>
+            <li>'span's are not used to group items together, instead they are used to style parts of text or a few elements without changing the layout of the page</li>
+          </ul>
+          <h4>id vs class</h4>
+          <p>'id' is used to <b>uniquely</b> identify an element, should be used sparingly because it can slow a browser down
+          <br>it can also be used with anchor element (a href="#unique") to generate a link that will jump directly to unique element</p>
+          <p>'class' is used to style a group of elements similarly, probably better to make more 'class'es and avoid 'id's</p>
+        </div><!-- this closes this InterestingNotes div -->  
+
+        <h3 class="NotesTitle">Using Semantic Tags</h3>
+          <p>change 'div' tags to more specific elements to aid in indexing the page/code (e.x. for page title use tag 'h1', can still specify class, but it may be unnecessary-- see below</p>
+          <p><b>Quiz question/answer:</b> When you do this it changes the size of the text, the weight (i.e. makes it bold), and changes the box around the text (including adding margins or extra space above and below the text)</p>
+          <p>Another way to put this: "The tag's element name determines both the semantic meaning of the content and the default style rules applied to it"</p>
+
+        <div class="InterestingNotes">
+          <p>Useful links from the instructor notes:</p>
+          <ul>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element#Content_sectioning">Content Sectioning</a> - "Content sectioning elements allow you to organize the document content into logical pieces. Use the sectioning elements to create a broad outline for your page content, including header and footer navigation, and heading elements to identify sections of content"</li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Sections_and_Outlines_of_an_HTML5_document#The_HTML5_Outline_Algorithm">Using HTML Sections and Outlines</a> - part of the reasoning behind doing this is that it makes defining classes for these elements unnecessary because they can be referenced in CSS directly</li>
+            <li>Also: different browsers have different default style rules for 'h1' and other elements</li>
+          </ul>
+        </div><!-- closes this round of InterestingNotes -->
+
+        <h3 class="NotesTitle">The Box Revisited</h3>
+          <p><b>The Box Model (see <a href="http://assignments.udacity-extras.appspot.com/courses/html-css/samples/box-model.html">here</a>)</b></p>
+          <div class="ImageDescription">
+            <div class="Image">
+              <ul>
+                <li><b>margin</b> - (reddish) clears area around the border, completely transparent, the space between boxes <br>(<em>horizontal top/bottom only??</em>)</li>
+                <li><b>border</b> - (orange) goes around padding, inherited from color property of the box (<em>not sure what this means</em>)<br>(border-width, all the way around, four sides)</li>
+                <li><b>padding</b> - (green) clears area around content, affected by background color of the box, space inside the box that protects the content<br>(all the way around, four sides)</li>
+                <li><b>content</b> - (blue) the image or text that appears on the website, other layers protect it so that other items on the page don't overlap or sit too close<br>(width and height can be defined to give it shape)</li>
+              </ul>
             </div>
-        </div><!-- this closes the div around Stage 0 -->
-
-        <div class="Stage1"><!-- this is another div just meant to allow me to collapse Stage 1 notes, not for other formatting purposes -->
-
-            <h2 class="StageTitle" id="FirstStage">Stage 1</h2>
-
-            <h3 class="NotesTitle">html, css, and javascript go into web development</h3>
-                analogies:
-                <br>html = <em>structure of house, e.x. walls</em>
-                <br>css = <em>design, e.x. carpet/wall cover</em>
-                <br>javascript = <em>interactive components, e.x. TV remote</em>
-
-                <p>
-                    Use More tools > Developer tools to visualize inner workings of various websites in Chrome
-                    <br>also: right click --> inspect element will open developer tools in exact location where image/element is in tree/structure
-                    <br>you can play with the appearance of the site in DevTools, to return to original just refresh the page
-                </p>
-
-            <h3 class="NotesTitle">HTML has syntax + rules</h3>
-	            tags --> elements (from start tag to end plus content within) --> tree
-	            <br>tags have names or types
-	            <br>tags can have attributes with particular values
-
-            <h3 class="NotesTitle">CSS (cascading style sheets) also has syntax and rules</h3>
-	            changes how elements look on a page (font size, color, etc)
-	            <br>e.x. "all h1 in class 'article'' should have text color blue"
-
-            <h3 class="NotesTitle">DOM, (document object model) built by browser from HTML doc</h3>
-                didn't take any notes on this part...
-
-	        <h3 class="NotesTitle">Boxes to HTML</h3>
-	            '<b>div</b>' tags are used to define boxes (and boxes within boxes via tree/structure)
-	            <br>when defining boxes, give each element a class attribute so you can assign style later ('labels on boxes'), boxes/tags can have several labels
-                <br><b>DO NOT FORGET TO ADD THESE (again)</b>
-                <br>class attribute should be at least partially descriptive (e.x. 'title') and not just 'box1',etc
-
-<!-- this is where the notes ended for the first Stage 1 Reflection Assignment -->
-
-            <h3 class="NotesTitle">Cascading style sheets (CSS)</h3>
-                there can be several CSS files ('<b>sheets</b>')' referenced in HTML
-                <br>'cascading' means that most specific rule applies
-    
-                <p>
-                    '<b>selector</b>' - defines elements that a particular style will apply to (recall that an element is an HTML 'tag' plus its content)
-                    <br>e.x. an HTML tag (all paragraphs, p), a class as defined in HTML (.classname, to specify certain paragraphs)
-                </p>
-            
-                <p>
-                    More on this: you can make all paragraphs the same font size, but certain paragraphs different colors by specifying classes
-                    <br>write style in the form: attribute colon value
-                    <br>e.x. color: red
-                    <br>for more information on attributes visit:
-                    <br><a href="http://css-tricks.com/how-css-selectors-work/">How CSS Selectors Work</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference">MDN CSS Reference</a>
-                </p>
-
-                <p>
-                    font-style is a <em>property</em> or <em>attribute</em> that has multiple potential <em>values</em> (e.x. normal, italic, oblique), syntax: 
-                    <br>font-style: normal (i.e. attribute colon value, this is a <em>declaration</em> or <em>rule</em>)
-                </p>
-            
-                <p>
-                    This information (and more) is nicely summarized <a href="https://classroom.udacity.com/nanodegrees/nd000/parts/0001345402/modules/383612889175460/lessons/4131369051/concepts/36111086980923">here</a>.
-                </p>
-
-                Useful info:
-                <br>There are 3 ways to incorporate CSS styling
-                <br>Add '<b>style</b>' element within '<b>head</b>' element in your HTML:
-                    <div class="CodeParent">
-                        <div class="CodeLeft">
-                            &lt;head&gt;<br />
-                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;style&gt;<br />
-                            &nbsp;&nbsp;&nbsp;&nbsp;div {<br />
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background-color : red;<br />
-                            &nbsp;&nbsp;&nbsp;&nbsp;}<br />
-                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;/style&gt;<br />
-                            &lt;/head&gt;<br />
-                        </div>
-                        <div class="CodeRight">
-                            This will give the div a red background.
-                        </div>
-                    </div>
-
-                <br>Link to separate CSS file
-                    <div class="CodeParent">
-                        <div class="CodeLeft">
-                            &lt;head&gt;<br />
-                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;link rel="stylesheet" href="main.css"&gt;<br />
-                            &lt;/head&gt;<br />
-                        </div>
-                        <div class="CodeRight">
-                            This was the method used for this page!
-                        </div>
-                    </div>
-
-                    <br>In line with HTML code (<em>this is frowed upon because it leads to lots of repeated code so I won't bother to show it here!!</em>)
-
-                <div class="InterestingNotes">
-                    <a href="https://discussions.udacity.com/t/stage-1-webcasts/16000/4">This</a> is the transcript from some office hours held back in March. It covers lots of important stuff, like:
-                    
-                    <ul>
-                        <li>"Use '<b>outline</b>' attribute to put an outline over elements to visually see how 'div' and 'span' boxes are interacting with one another"</li>
-                        <li>'div's are mainly used to group items together to logically organize code so we can add styling to a whole block of code at once (thereby avoiding repetition)</li>
-                        <li>'span's are not used to group items together, instead they are used to style parts of text or a few elements without changing the layout of the page</li>
-                    </ul>
-
-                    <h4>id vs class</h4>
-                        'id' is used to <b>uniquely</b> identify an element, should be used sparingly because it can slow a browser down
-                        <br>it can also be used with anchor element (a href="#unique") to generate a link that will jump directly to unique element
-
-                        <br><br>
-                        'class' is used to style a group of elements similarly, probably better to make more 'class'es and avoid 'id's
-                </div><!-- this closes this InterestingNotes div -->  
-
-            <h3 class="NotesTitle">Using Semantic Tags</h3>
-                change 'div' tags to more specific elements to aid in indexing the page/code (e.x. for page title use tag 'h1', can still specify class, but it may be unnecessary-- see below)
-                <br><br><b>Quiz question/answer:</b> When you do this it changes the size of the text, the weight (i.e. makes it bold), and changes the box around the text (including adding margins or extra space above and below the text)
-                <br><br>Another way to put this: "The tag's element name determines both the semantic meaning of the content and the default style rules applied to it"
-
-                <div class="InterestingNotes">
-                    Useful links from the instructor notes:
-                        <ul>
-                            <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element#Content_sectioning">Content Sectioning</a> - "Content sectioning elements allow you to organize the document content into logical pieces. Use the sectioning elements to create a broad outline for your page content, including header and footer navigation, and heading elements to identify sections of content"</li>
-                            <li><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Sections_and_Outlines_of_an_HTML5_document#The_HTML5_Outline_Algorithm">Using HTML Sections and Outlines</a> - part of the reasoning behind doing this is that it makes defining classes for these elements unnecessary because they can be referenced in CSS directly</li>
-                            <li>Also: different browsers have different default style rules for 'h1' and other elements</li>
-                        </ul>
-                </div><!-- closes this round of InterestingNotes -->
-
-            <h3 class="NotesTitle">The Box Revisited</h3>
-                <b>The Box Model (see <a href="http://assignments.udacity-extras.appspot.com/courses/html-css/samples/box-model.html">here</a>)</b>
-                <div class="ImageDescription">
-                    <div class="ImageLeft">
-                        <ul>
-                            <li><b>margin</b> - (reddish) clears area around the border, completely transparent, the space between boxes <br>(<em>horizontal top/bottom only??</em>)</li>
-                             <li><b>border</b> - (orange) goes around padding, inherited from color property of the box (<em>not sure what this means</em>)<br>(border-width, all the way around, four sides)</li>
-                             <li><b>padding</b> - (green) clears area around content, affected by background color of the box, space inside the box that protects the content<br>(all the way around, four sides)</li>
-                            <li><b>content</b> - (blue) the image or text that appears on the website, other layers protect it so that other items on the page don't overlap or sit too close<br>(width and height can be defined to give it shape)</li>
-                        </ul>
-                    </div>
-
-                    <div class="ImageRight">
-                        <img src="box-model.png" alt="The Box Model">
-                    </div>
-                </div>
-                    <br>Size of element = sum(border, padding, content widths)
-                    <div class="CodeParent">
-                        <div class="CodeLeft">
-                            * {<br />
-                            &nbsp;&nbsp;&nbsp;&nbsp;-webkit-box-sizing: border-box;<br />
-                            &nbsp;&nbsp;&nbsp;&nbsp;-moz-box-sizing: border-box;<br />
-                            &nbsp;&nbsp;&nbsp;&nbsp;-ms-box-sizing: border-box;    <br />
-                            &nbsp;&nbsp;&nbsp;&nbsp;box-sizing: border-box;<br />
-                            }
-                        </div>
-                        <div class="CodeRight">
-                        "This makes calculation of element size include border and padding so it is easier to make layouts", sets width of <em>overall</em> box so no matter how padding and border are tweaked, the size of the box is the same. <b>Remember: margin is NOT included!</b>
-                        <br>Need to add browser-specific prefixes to make sure it is interpreted properly (first 3 lines)
-                        </div>
-                    </div>
-                    <br>Instead of pixels, you can set size of box as percentage, so it changes with screen size (this seems like it would generally be a good idea, I will probaby default to this)
-                    <br><br>Can also set max-width for box so it resizes as necessary but will never be larger than box width
-                    <br><br>This does not change the layout of the page, only the sizes of the boxes and if/how they change as the browser window changes in size 
-
-            <h3 class="NotesTitle">Positioning Boxes</h3>
-                <b>Flex box layout (great guide can be found <a href="http://css-tricks.com/snippets/css/a-guide-to-flexbox/">here</a>)</b>
-                <br><br>Flex box = flexible box, allows you to distribute space among items in a div 
-                <div class="CodeParent">
-                    <div class="CodeLeft">
-                    .classname {<br />
-                        &nbsp;&nbsp;&nbsp;&nbsp;display: -webkit-flex;<br />
-                        &nbsp;&nbsp;&nbsp;&nbsp;display: flex;<br />
-                    }
-                    </div>
-
-                    <div class="CodeRight">
-                    This is an example! I had to alter the margin, padding, etc of this box so that there was space between this text and the code on the left
-                    </div>
-                </div>
-
-                <br>Note: 'classname' should be the class of the div that contains the divs you want next to each other (aka the child elements). Also: the -webkit-flex is required to ensure it displays properly in Safari
-
-                <div class="InterestingNotes">
-                    These are my notes from the link in the title of this section:
-                    <ul>
-                        <li>By default, flex items (children divs within parent divs) are laid out in the source order, the '<b>order</b>' property can change this. e.x. for child div 'second' that was put first in the HTML add:
-                            <div class="Code">
-                            .second {<br />
-                            &nbsp;&nbsp;&nbsp;&nbsp;order: 2;<br />
-                            }
-                            </div>
-                        </li>
-                        <li>Within parent div (container) children divs (items) default to rows that go left to right, but there are other options:
-                            <div class="Code">
-                            .container {<br />
-                            &nbsp;&nbsp;&nbsp;&nbsp;flex-direction: row; /* this is the default */<br />
-                            &nbsp;&nbsp;&nbsp;&nbsp;flex-direction: row-reverse; /* this will go right to left */<br />
-                            &nbsp;&nbsp;&nbsp;&nbsp;flex-direction: column; /* this is will go top to bottom */<br />
-                            &nbsp;&nbsp;&nbsp;&nbsp;flex-direction: column-reverse; /* this is will go bottom to top */<br />
-                            }
-                            </div>
-                        </li>
-                        <li>flex-grow allows you to distribute space in side the container amongst the items. When set equal to 1 for all items the space will be distributed equally, if all but one item has flex-grow:2, that item will be given twice as much space:
-                            <div class="Code">
-                            .item {<br />
-                            &nbsp;&nbsp;&nbsp;&nbsp;flex-grow: 2; <br />
-                            }
-                            </div>
-                        </li>
-                        <li>flex-wrap will allow the items to wrap as necessary
-                            <div class="Code">
-                            .container {<br />
-                            &nbsp;&nbsp;&nbsp;&nbsp;flex-wrap: nowrap; /* single line */<br />
-                            &nbsp;&nbsp;&nbsp;&nbsp;flex-wrap: wrap; /* multi-line */<br />
-                            &nbsp;&nbsp;&nbsp;&nbsp;flex-wrap: wrap-reverse; /* multi-line (don't totally get this one) */<br />
-                            }
-                            </div>
-                        </li>
-                        <li>justify-content defines the alignment along the main axis and distributes free space left over when all items on a line are a set size or have reached their max size. Can be set to flex-start (everything aligns to the left), flex-end (everything aligns to the right), center, space-between, or space-around (these last ones are self explanatory)
-                            <div class="Code">
-                            .container {<br />
-                            &nbsp;&nbsp;&nbsp;&nbsp;justify-content: center; /* this is one example */<br />
-                            }
-                            </div>
-                        </li>
-                        <li>Holy crap, there are more of these than I thought, refer to this resource as necessary!! There are also great examples if you scroll down!
-                        </li>
-                    </ul>
-                </div>
-
-            <h3 class="NotesTitle">Adding Image</h3>
-                To add image to html: make folder within the folder that contains the website's html and CSS files named "Images" then add img element (or is it img tag because it does not have content or an end tag?)
-
-            <h3 class="NotesTitle">Code, Test, Refine</h3>
-                Always code, test, and refine before proceeding! <em>This an iterative process!</em>
-                <ol>
-                    <li>Look for natural boxes (start with structure, 'boxify')</li>
-                    <li>Look for repeated styles and semantic elements (add tags, i.e. headings, etc)</li>
-                    <li>Write HTML</li>
-                    <li>Apply styles from BIGGEST to smallest</li>
-                    <li>Fix things (try out other browsers, resize the window, repeats steps 3 and 4 until you're satisfied)</li>
-                </ol>
-            
-            <h3 class="NotesTitle">More on DevTools</h3>
-                Developer tools can also be helpful during "Code, Test, Refine": you can change things on the fly to see how they effect your page without changing the actual HTML or CSS files
-                <br><br>The sources (vs elements) tab will allow you to see the actual code in the browser window
-                <br><br>Remember that you can reset any changes by refreshing the page
-                <br><br><b>Question:</b> You can obviously alter parameters that are present, but can you add new parameters in DevTools?
-                <br><b>Answer:</b> YES! You can add to and edit both the HTML and CSS of a page using DevTools. (Figured this one out myself)
-
-            <h3 class="NotesTitle">Comparing with the Design</h3>
-                Check layout, margins, fonts, colors, etc. Play with things in DevTools until appear how you want then alter the CSS. 
-                <br><br>For the example (app.html versus <a href="https://storage.googleapis.com/supplemental_media/udacityu/2851598572/mock1-fav-app.pdf">the mockup</a>) we have been playing with throughout this lesson, you can change the margin between the image and description by changing the right margin of the image OR the left margin of the text, recall that setting the margin will push the surrounding divs or items away
-
-            <h3 class="NotesTitle">Verifying HTML and CSS</h3>
-                Be sure the code you write is correct and complies with standards. Check HTML <a href="http://validator.w3.org/#validate_by_input">here</a> and check CSS <a href="http://jigsaw.w3.org/css-validator/#validate_by_input">here</a>.
-                <br><br>If it is incorrect, it may appear different in different browsers.
-                <br><br>You can also displays icons on your webpage that show that your code complies with standards.
-
-
-        </div><!-- this will close the "Stage1" div -->     
-        <br><br>        
-        <div id="Extras">
-            <h2 class="StageTitle">Extras</h2>
-            <br>These are notes about things I learned or resources I used while completing this assignment:
-            <div class="InterestingNotes">
-                <ul>
-                    <li><a href="http://imagecolorpicker.com/en">Color Picker</a> will let you upload an image and then get HEX or RBG codes for colors it contains</li>
-                    <li><a href="http://www.freebits.co.uk/convert-html-code-to-text.html">How to Show HTML Code</a> does what it says</li>
-                    <li><b>& n b s p ;</b> without the spaces will add a single whitespace to your website</li>
-                    <li>I also learned to add shadows to text and divs, fix the position of a div relative to others, change color and remove the line from underneath links, add and manipulate decorative borders around divs, alter the size of images, and a few other cool things! (see source HTML and CSS for more info!)</li>
-                </ul>    
+            <div class="Image">
+              <img src="box-model.png" alt="The Box Model">
             </div>
-        </div> 
+          </div>
+          <p>Size of element = sum(border, padding, content widths)</p>
+          <div class="CodeParent">
+            <div class="CodeLeft">
+              <p>* {<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;-webkit-box-sizing: border-box;<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;-moz-box-sizing: border-box;<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;-ms-box-sizing: border-box;    <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;box-sizing: border-box;<br />
+              }</p>
+            </div>
+            <div class="CodeRight">
+              <p>"This makes calculation of element size include border and padding so it is easier to make layouts", sets width of <em>overall</em> box so no matter how padding and border are tweaked, the size of the box is the same. <b>Remember: margin is NOT included!</b>
+              <br>Need to add browser-specific prefixes to make sure it is interpreted properly (first 3 lines)</p>
+            </div>
+          </div>
+          <p>Instead of pixels, you can set size of box as percentage, so it changes with screen size (this seems like it would generally be a good idea, I will probaby default to this)</p>
+          <p>Can also set max-width for box so it resizes as necessary but will never be larger than box width</p>
+          <p>This does not change the layout of the page, only the sizes of the boxes and if/how they change as the browser window changes in size</p>
 
-        <p>
-            <a href="http://jigsaw.w3.org/css-validator/check/referer">
-            <img style="border:0;width:88px;height:31px"
-               src="http://jigsaw.w3.org/css-validator/images/vcss-blue"
-              alt="Valid CSS!" />
-             </a>
-        </p>
+          <h3 class="NotesTitle">Positioning Boxes</h3>
+            <p><b>Flex box layout (great guide can be found <a href="http://css-tricks.com/snippets/css/a-guide-to-flexbox/">here</a>)</b></p>
+            <p>Flex box = flexible box, allows you to distribute space among items in a div</p>
+            <div class="CodeParent">
+              <div class="CodeLeft">
+                <p>.classname {<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;display: -webkit-flex;<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;display: flex;<br />
+                }</p>
+              </div>
+              <div class="CodeRight">
+              <p>This is an example! I had to alter the margin, padding, etc. of this box so that there was space between this text and the code on the left</p>
+              </div>
+            </div>
+            <p>Note: 'classname' should be the class of the div that contains the divs you want next to each other (aka the child elements). Also: the -webkit-flex is required to ensure it displays properly in Safari</p>
 
-        </div><!-- this ends "StageNotes -->
-    </div><!-- this closes "NotesMaster" -->
+          <div class="InterestingNotes">
+            <p>These are my notes from the link in the title of this section:</p>
+            <ul>
+              <li>By default, flex items (children divs within parent divs) are laid out in the source order, the '<b>order</b>' property can change this. e.x. for child div 'second' that was put first in the HTML add:
+                <div class="Code">
+                  <p>.second {<br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;order: 2;<br />
+                  }</p>
+                </div></li>
+              <li>Within parent div (container) children divs (items) default to rows that go left to right, but there are other options:
+                <div class="Code">
+                  <p>.container {<br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;flex-direction: row; /* this is the default */<br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;flex-direction: row-reverse; /* this will go right to left */<br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;flex-direction: column; /* this is will go top to bottom */<br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;flex-direction: column-reverse; /* this is will go bottom to top */<br />
+                  }</p>
+                </div></li>
+              <li>flex-grow allows you to distribute space in side the container amongst the items. When set equal to 1 for all items the space will be distributed equally, if all but one item has flex-grow:2, that item will be given twice as much space:
+                <div class="Code">
+                  <p>.item {<br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;flex-grow: 2; <br />
+                  }</p>
+                </div></li>
+              <li>flex-wrap will allow the items to wrap as necessary
+                <div class="Code">
+                  <p>.container {<br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;flex-wrap: nowrap; /* single line */<br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;flex-wrap: wrap; /* multi-line */<br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;flex-wrap: wrap-reverse; /* multi-line (don't totally get this one) */<br />
+                  }</p>
+                </div></li>
+              <li>justify-content defines the alignment along the main axis and distributes free space left over when all items on a line are a set size or have reached their max size. Can be set to flex-start (everything aligns to the left), flex-end (everything aligns to the right), center, space-between, or space-around (these last ones are self explanatory)
+                <div class="Code">
+                  <p>.container {<br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;justify-content: center; /* this is one example */<br />
+                  }</p>
+                </div></li>
+              <li>Holy crap, there are more of these than I thought, refer to this resource as necessary!! There are also great examples if you scroll down!</li>
+            </ul>
+          </div>
+
+          <h3 class="NotesTitle">Adding Image</h3>
+            <p>To add image to html: make folder within the folder that contains the website's html and CSS files named "Images" then add img element (or is it img tag because it does not have content or an end tag?) or link with full URL</p>
+
+          <h3 class="NotesTitle">Code, Test, Refine</h3>
+            <p>Always code, test, and refine before proceeding! <em>This an iterative process!</em></p>
+            <ol>
+              <li>Look for natural boxes (start with structure, 'boxify')</li>
+              <li>Look for repeated styles and semantic elements (add tags, i.e. headings, etc)</li>
+              <li>Write HTML</li>
+              <li>Apply styles from BIGGEST to smallest</li>
+              <li>Fix things (try out other browsers, resize the window, repeats steps 3 and 4 until you're satisfied)</li>
+            </ol>
+            
+          <h3 class="NotesTitle">More on DevTools</h3>
+            <p>Developer tools can also be helpful during "Code, Test, Refine": you can change things on the fly to see how they effect your page without changing the actual HTML or CSS files</p>
+            <p>The sources (vs elements) tab will allow you to see the actual code in the browser window</p>
+            <p>Remember that you can reset any changes by refreshing the page</p>
+            <p><b>Question:</b> You can obviously alter parameters that are present, but can you add new parameters in DevTools?</p>
+            <p><b>Answer:</b> YES! You can add to and edit both the HTML and CSS of a page using DevTools. (Figured this one out myself)</p>
+
+          <h3 class="NotesTitle">Comparing with the Design</h3>
+            <p>Check layout, margins, fonts, colors, etc. Play with things in DevTools until appear how you want then alter the CSS.</p> 
+            <p>For the example (app.html versus <a href="https://storage.googleapis.com/supplemental_media/udacityu/2851598572/mock1-fav-app.pdf">the mockup</a>) we have been playing with throughout this lesson, you can change the margin between the image and description by changing the right margin of the image OR the left margin of the text, recall that setting the margin will push the surrounding divs or items away</p>
+
+          <h3 class="NotesTitle">Verifying HTML and CSS</h3>
+            <p>Be sure the code you write is correct and complies with standards. Check HTML <a href="http://validator.w3.org/#validate_by_input">here</a> and check CSS <a href="http://jigsaw.w3.org/css-validator/#validate_by_input">here</a>.</p>
+            <p>If it is incorrect, it may appear different in different browsers.</p>
+            <p>You can also displays icons on your webpage that show that your code complies with standards.</p>
+  </div><!-- this will close the "Stage1" div -->     
+        
+  <div id="Extras">
+    <h2 class="StageTitle">Extras</h2>
+      <p>These are notes about things I learned or resources I used while completing this assignment:</p>
+        <div class="InterestingNotes">
+          <ul>
+            <li><a href="http://imagecolorpicker.com/en">Color Picker</a> will let you upload an image and then get HEX or RBG codes for colors it contains</li>
+            <li><a href="http://www.freebits.co.uk/convert-html-code-to-text.html">How to Show HTML Code</a> takes code and "translates" it so that you can display it in HTML file (instead of having it be interpreted as code)</li>
+            <li><b>& n b s p ;</b> without the spaces will add a single whitespace to your website</li>
+            <li>I also learned to add shadows to text and divs, fix the position of a div relative to others, change color and remove the line from underneath links, add and manipulate decorative borders around divs, alter the size of images, and a few other cool things! (see source HTML and CSS for more info!)</li>
+            <li>'<b>target</b>' attribute in a link specifies where to open linked document e.x. target="_blank" will open in a new window or tab</li>
+            <li>All text should be within an appropriate tag e.x. "p" or "h2", etc.</li>
+            <li>Use two spaces instead of tabs for HTML and CSS</li>
+            <li>For CSS body instead of * ('universal selector') to apply general style throughout website</li>
+            <li>Use lowercase letters for hex colors: 7aa7ad not 7AA7AD</li>
+          </ul>    
+        </div>
+  </div> 
+
+  <div>
+    <a href="http://jigsaw.w3.org/css-validator/check/referer">
+    <img style="border:0;width:88px;height:31px" src="http://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!" /></a>
+  </div>
+
+</div><!-- this closes "NotesMaster" -->
 </body>
 </html>
 
