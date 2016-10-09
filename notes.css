@@ -161,3 +161,13 @@ h2 {
   padding: 1px;
   margin: auto;
 }
+
+.inline_code {
+  background-color: #b3c2bf;
+  font-family: Courier New, Courier, monospace;
+  padding: 3px;
+  border-radius: 3px;
+  border: 1px #FDFEF0;
+  border-style: solid;
+  margin: 1px 5px;
+}

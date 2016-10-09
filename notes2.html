@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Intro to Programming Nanodegree Notes by bjemcnally</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="notes.css">
+</head>
+    
+<body>
+    
+<div class="Navigation">
+  <a href="http://www.udacity.com" target="_blank"><img src="udacity.png" alt="Udacity Icon" width="200" height="100"></a>
+  <h1>Intro to Programming Nanodegree Notes</h1>
+  <img src="waves.png" alt="waves" width="100" height="100" class="Center">
+  <h3 class="NotesTitle">bjemcnally | Fall 2016</h3>
+  <h3 class="NotesTitle">Use these buttons to navigate:</h3>
+  <div class="Nav">
+    <div class="Button">
+      <a href="notes.html#Welcome">Welcome</a>
+    </div>
+    <div class="Button">
+      <a href="notes.html#ZeroStage">Stage 0</a>
+    </div>
+    <div class="Button">
+      <a href="notes.html#FirstStage">Stage 1</a>
+    </div>
+    <div class="Button">
+      <a href="notes.html#Extras">Extras</a>
+    </div>
+    <div class="Button">
+      <a href="notes2.html">Stage 2</a>
+    </div>
+  </div>
+    <h3 class="NotesTitle">Comments &amp; Suggestions Welcome!</h3>
+</div>
+
+<div class="NotesMaster"><!-- this one surrounds all of the notes -->
+
+<div><!-- this surrounds all of the Stage 2 notes -->
+<h2 class="StageTitle">Stage 2</h2>
+  <h3 class="NotesTitle">Intro: Code Your Own Quiz</h3>
+    <p>Concepts, Tools, and setting up workspace...</p>
+    <p>Being comfortable makes everything easier and more efficient</p>
+    <p>This program uses Python 2 :( oh well...
+    <p>Re-installed Python 2.7 to make sure I have everything set properly for this course</p>
+    <p>To use <b>Code Runner</b> in Visual Studio Code (VS Code), press Control+Alt+N, to stop running code press Control+Alt+M</p>
+    <p>Use # symbol to add notes in Python</p>
+    <p>Get in habit of running code this way!</p>
+    <p><b>Git Bash</b>
+      <br>MinTTY requires command line to be written like this:
+      <div class="CodeParent">
+        <div class="CodeLeft">
+          $ <b>winpty</b> python file_name.py
+        </div>
+        <div class="CodeRight">
+          <b>Don't forget this!!</b>
+        </div>
+      </div>
+      <p>Also: Windows users need to use <span class="inline_code">start</span> command instead of <span class="inline_code">open</span> to open a file in its default program.</p>
+    <p><b>Graphical User Interface (GUI or "gwee")</b> - visual way of interacting with computer with windows, buttons, mouse, etc.</p>
+    <p><b>Command Line Interface (CLI)</b> - e.x. Terminal, Git Bash, Powershell, etc.
+    <ul>
+      <li><b><span class="inline_code">pwd</span> = print working directory</b>, "where am I?", will print out path to current directory (what GUI calls a folder)
+        <br>When CLI is first opened it starts in the <b>home directory</b> (in my case this is C:/Users/bjerickson)</li>
+      <li><span class="inline_code">ls</span> = list, helps us view the contents of a directory</li>
+      <li><span class="inline_code">start</span>, use <span class="inline_code">start .</span> to view current directory's contents in a window, or use <span class="inline_code">start directory_name</span> to open another directory (folder)</li>
+      <li><span class="inline_code">cd</span> = change directories, used to "move" somewhere else, <span class="inline_code">cd Desktop</span> will move to Desktop directory (folder) if it's within current directory, <span class="inline_code">cd ..</span> will move up one directory, <span class="inline_code">cd</span> will return to home directory, <span class="inline_code">cd FolderA/FolderAb/FolderAbC</span> can accomplish several steps at once (this is referred to as "chaining" the directories together)</li>
+      <li><span class="inline_code">mkdir</span> = make directory ("make-dur" or "make-deer"), creates a new folder with the name we provide: <span class="inline_code">mk dir animals</span> will make new folder called animals
+        <br>to make folder "rodents" inside of "animals":
+        <br> cd into animals than mkdir rodents
+        <br>OR from Desktop, "mkdir animals/rodents"
+        <p>to make several new directories, separate them with a space: <span class="inline_code">mkdir cats dogs marsupials</span>
+          <br>for this reason, <b>it is not a good idea to put spaces in your directory or filenames!!</b></li>
+      <li><span class="inline_code">touch</span><, creates new files in one step, ex <span class="inline_code">touch first_file.txt</span> will create brand new, empty text file, you can verify that it was made using <span class="inline_code">ls</span>, can make a file in a directory other than current directory by specifying filepath (as with <span class="inline_code">ls</span>ls and <span class="inline_code">cd</span>), and to create multiple files separate with spaces (as with <span class="inline_code">mkdir</span>)</li>
+      <li><span class="inline_code">rm</span> is used to delete a file completely (not move it to the trash), can delete multiple files by separating names with spaces as before</li>
+      <li>There are two ways to remove directories:
+        <br><span class="inline_code">rmdir</span>, <span class="inline_code">rmdir directory_name</span> deletes a directory, but only works if it's empty
+        <br><span class="inline_code">rm -rf</span><b> (be careful with this one!), deletes a non-empty directory where -rf = recursive force, this is potentially very dangerous!!!!!!!</b></li>
+      <li><b>Remember that to run a Python file in Git Bash you must include winpty:</b>
+            <span class="inline_code">winpty python file_name.py</span></li>
+    </ul>
+    <p>A summary of these new commands can be found <a href="https://classroom.udacity.com/nanodegrees/nd000/parts/0001345403/modules/356813882475460/lessons/4137319262/concepts/63975772210923">here</a>.</p>
+   <p>From here on, workspace = browser, code editor, and terminal (Git Bash or other)</p>
+   <p>We will make a MadLibs games</p>
+   <p>Learn to use "variables", to write "functions", and to think like a programmer</p>
+   <p>Using Lessons 2.1-2.7 and the subsequent Work Session</p>
+   <p><b>From here on, instead of naming each subsection individually, I will name the larger sections and just link directly to parts that are tricky or that I may need to review</b></p>
+
+  <h3 class="NotesTitle">Introduction to Serious Programming</h3>
+    <p>Computer Science is about how to solve problems via a precise set of steps
+      <br>"Crawling webpages" finds data, starts from "seed" page to find links to other pages which can themselves have links to other pages, etc.</p>
+    <p><b>What is programming?</b> the core of computer science, to change a toaster's behavior you'd have to mechanically alter it, computers can't do anything without a program, it tells the computer what to do (and it can do any computation!), program must be a very precise sequence of steps, but computer can exute those steps VERY quickly</p>
+    <p><b>Python</b>, named for Monty Python, high level language, Python code runs via Python program (interpreter)</p>
+    <p><b>Remember that Control+Alt+N will run code in VS Code</b></p>
+    <p>Took notes for <b>First Programming Quiz</b> in Python file which can be viewed <a href="first-programming-quiz.py">here</a>.</p>
+    <p>Why do we need to invent new languages to program computers instead of using natural languages (like English or Mandarin)?</p>
+      <ul>
+        <li>Ambiguity in natural languages (e.x. biweekly can mean every other week AND twice a week = ambiguous!)</li>
+        <li>Verbosity, code minimizes number of necessary characters</li>
+      </ul>
+    <p>getting a syntax error indicates that your script contains something that is not part of the python language</p>
+    <p><b>Grammar</b> (more notes on this section can be found <a href="grammar.py">here</a>)
+      <br>English: sentence = subject, verb, object
+      <br>subject and object can be nouns, etc
+      <br>Languages have rules and parts of speech, etc</p>
+    <p><b>Backus Naur Form</b>
+      <br>precisely describe language in simple and concise way
+      <br>Non-terminal --> replacement
+      <br>replacement can be non-terminal or terminal and you keep replacing until you reach terminals:
+      <br>Sentence --> Subject Verb Object
+      <br>Subject --> Noun
+      <br>Object --> Noun
+      <br>Verb --> Eat
+      <br>Verb --> Like
+      <br>Noun --> I
+      <br>Noun --> Python
+      <br>Noun --> Cookies</p>
+    <p><b>Derivation</b> starts from non-terminal and follows rules until we have only terminals left
+      <br>Valid outputs for above include: "I Eat Cookies" and "Python Like Python", etc.</p>
+    <p>Python grammar is much stricter than most natural language grammars
+      <br>Code must match language grammar exactly (see <a href="python-expression.py">here</a> for an example of bad Python grammar)</p>
+    <p>Python Grammar for Arithmetic Expression:
+      <br>Expression --> Expression Operator Expression (recursive definition, resulting in an infinite number of possible outcomes/derivations)
+      <br>Expression --> Number
+      <br>Operator --> +
+      <br>Operator --> *
+      <br>Number --> 0, 1, ... etc
+      <br>Expression --> (Expression)
+      <br>An example derivation can result in: 1 + 1 and/or replacing expressions with expressions can increase complexity infinitely!
+      <br>A few simple rules (like above) can be used to describe a big language!</p>
+    <p>Speed of Light Quiz (associated Python <a href="speed-of-light.py">here</a>)
+      <br>Write Python code to print out how far light travels in cm in one nanosecond...
+      <br>For one billion (1,000,000,000) or whatever, Python does not allow spaces (1 000 000 000) or the commas, must use 1000000000
+      <br>Note: if all numbers provided are integers Python will return an integer, to get decimals include at least one decimal place in your calculation (1.0 vs just 1)</p>
+    <p>Grace Hopper
+      <br>Compiler, a program that writes other programs</p>
+
+  <h3 class="NotesTitle">Work Session 1</h3>
+    <p>Debugging practice: Notes
+      <br><span class="inline_code">print 1</span> is valid
+      <br><span class="inline_code">&nbsp;print 1</span> (leading space) is NOT valid
+      <br>Python will interpret <span class="inline_code">print &nbsp;&nbsp;&nbsp; 1</span> the same as <span class="inline_code">print 1</span>
+      <br><span class="inline_code">Print 1</span> (capital P) is NOT valid
+      <br>Takeaway: <em>the trick to dealing with mistakes in code ("bugs") is not to avoid making them entirely, but to develop a system for finding and fixing them!</em></p>
+
+  <h3 class="NotesTitle">Variables and Strings</h3>
+    <p>Where to Focus Your Attention</p>
+      <ol>
+        <li>What is a variable?</li>
+        <li>What does it mean to assign a value to a variable</li>
+        <li>What is the difference between = in math versus programming? i.e. what is the difference between 2 + 3 = 5 and my_variable = 5?</li>
+      </ol>
+    <p>Variables and Varying Variables (Python and more notes <a href="variables.py">here</a>, including quiz questions and answers)
+      <br>Assignment statement: Name = Expression
+      <br>Name can be any sequence of letters, numbers, and underscores
+      <br>Variables can vary, you can change their value!
+      <br>When including a decimal, it does not need to be follow by a number (1 = 1.0 = 1.)
+      <br>Variables can be used to refer to themselves e.x. , and we evaluate the <b>right side first</b>! And, you can do this repeatedly
+      <br><span class="inline_code">=</span> is not an equals symbol, it means "assignment" or an arrow</p> 
+    <p>Strings through Experimenting with Strings Quiz (Python and more notes <a href="strings.py">here</a>, including quiz questions and answers)
+      <br>A sequence of characters surrounded by quotes, e.x. <span class="inline_code">"I am a string"</span> or <span class="inline_code">'I am a string'</span> (single or double quotes, either work), <span class="inline_code">"I'm a string"</span> also works
+      <br>Convention says variables should be lowercase! (not a Python rule)
+      <br><span class="inline_code">+</span> operator in strings leads to concatenation, must manually add spaces
+      <br>Can't concatenate strings and numbers, e.x. <span class="inline_code">print 'My name is ' + 9</span></p>
+
+    <p>You can't add numbers and strings together (above), but you can multiply strings
+      <br>e.x. <span class="inline_code">print 'Hello ' + 'Dave ' + '!' * 3</span></p>
+    <p>Experimenting with Strings Quiz
+      <br><span class="inline_code">print 4 + 4</span> and <span class="inline_code">print "4" + "4"</span> return different things! (i.e. 8 vs 44)</p>
+    <p>Indexing Strings (more <a href="indexing_strings.py">here</a>)
+      <br>String indexing lets you select individual characters in the string
+      <br>extract subsequences
+
+<!-- STOPPED HERE ON 10/9 -->
+
+      <br>string[expression] e.x. 'udacity'[0] returns 0th character, or u
+      <br>expression can be anything that evaluates to a number, e.x. 1 + 1
+      <br>more common to use variable, not a string:
+      <p>name = 'Dave''
+        <br>name[2] will return v</p>
+      <br>Can use negative number, starts counting from back of string, [-1] will give last character, etc.</p>
+    <p>Selecting Subsequences
+      <br>string[expression1:expression2]
+      <br>will evaluate to a string that is a subset of the original string starting from index expression1 and ending at index expression2 (non-inclusive, i.e characters expression1 through expression2 - 1)
+      <br>leaving either side of the : blank will start at either the beginning [:4] or go through the end [3:], this way you don't actually need to know how long the string is!
+      <br>s[0:0] will give an empty string
+      <br>You can index positions that don't exist in this way!</p>
+
+    <p>Resuming @ Finding Strings in Strings (more <a href="finding_strings.py">here</a>)
+      <br>'find' method, built in procedure provided by Python, operates on strings:
+      <br>string.find(string)
+      <br>output is position where that substring is found (first occurrence) as a number, i.e. where in target string the search string is found
+      <br>If target string is not found, the output will be -1
+      <br>Note that Python is case sensitive!
+      <br>According to Python, every string begins with an empty string (?)
+      <br>'<b>parameters</b>' are what go inside parentheses</p>
+    <p>To find other occurrences, pass a second parameter:
+      <br>my_string = "hello, hello"
+      <br>print my_string.find('h') should return 0 for the first occurrence
+      <br>print my_string.find('h', 1) should return 7
+      <br><em>Note that 1 tells find what position to begin search, in the above string 1 refers to the first e, not the first occurence of 'h'</em></p>
+    <p>for the same string as above
+      <br>print my_string.find('e') should return 1
+      <br>print my_string.find('e', 3) should return 8 because it started looking for 'e' at the second l</p>
+
+  <h3 class="NotesTitle">Work Session 2</h3>
+    <p>See .py above
+      <br>Continues at Variables 1 in <a href="variables1.py">this</a> file</p>
+    <p>Replacing Strings</p>
+      <br>The method replace() returns a copy of the string in which the occurrences of old have been replaced with new, optionally restricting the number of replacements to max
+      <br>Like this: str.replace(old, new[, max])
+      <br>More simply: test_string.replace(old, new)
+      <p>An example:
+        <br>sentence = "I am a NOUN"
+        <br>print sentence.replace("NOUN", "bird")</p>
+      <p>Replace method allows us achieve the same outcome as slice and concatenate, but much more simply!</p>
+      
+</div><!-- this will close the "Stage2" div -->     
+        
+  <!-- <div>
+    <a href="http://jigsaw.w3.org/css-validator/check/referer">
+    <img style="border:0;width:88px;height:31px" src="http://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!" /></a>
+  </div> NEED TO VERIFY THIS! -->
+
+</div><!-- this closes "NotesMaster" -->
+</body>
+</html>
+
+
