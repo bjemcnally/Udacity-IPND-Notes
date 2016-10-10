@@ -168,52 +168,122 @@
     <p>Experimenting with Strings Quiz
       <br><span class="inline_code">print 4 + 4</span> and <span class="inline_code">print "4" + "4"</span> return different things! (i.e. 8 vs 44)</p>
     <p>Indexing Strings (more <a href="indexing_strings.py">here</a>)
-      <br>String indexing lets you select individual characters in the string
-      <br>extract subsequences
-
-<!-- STOPPED HERE ON 10/9 -->
-
-      <br>string[expression] e.x. 'udacity'[0] returns 0th character, or u
+      <br>String indexing lets you select individual characters in the string or extract subsequences
+      <br>string[expression] e.x. <span class="inline_code">'udacity'[0]</span returns 0th character, or u
       <br>expression can be anything that evaluates to a number, e.x. 1 + 1
-      <br>more common to use variable, not a string:
-      <p>name = 'Dave''
-        <br>name[2] will return v</p>
-      <br>Can use negative number, starts counting from back of string, [-1] will give last character, etc.</p>
-    <p>Selecting Subsequences
-      <br>string[expression1:expression2]
-      <br>will evaluate to a string that is a subset of the original string starting from index expression1 and ending at index expression2 (non-inclusive, i.e characters expression1 through expression2 - 1)
-      <br>leaving either side of the : blank will start at either the beginning [:4] or go through the end [3:], this way you don't actually need to know how long the string is!
-      <br>s[0:0] will give an empty string
-      <br>You can index positions that don't exist in this way!</p>
+      <br>more common to use variable, not a string:</p>
+      <div class="CodeParent">
+        <div class="CodeLeft">
+          <p>name = 'Dave''
+          <br>name[2] </p>
+        </div>
+        <div class="CodeRight">
+          <p>will return v</p>
+        </div>
+      </div>
+      <p>Can use negative number, starts counting from back of string, [-1] will give last character, etc.</p>
+  <p>Selecting Subsequences
+    <br><span class="inline_code">string[expression1:expression2]</span>
+    <br>will evaluate to a string that is a subset of the original string starting from index expression1 and ending at index expression2 (<em>non-inclusive</em>, i.e characters expression1 through expression2 - 1)
+    <br>leaving either side of the : blank will start at either the beginning [:4] or go through the end [3:], this way you don't actually need to know how long the string is!
+    <br>s[0:0] will give an empty string
+    <br>You can index positions that don't exist in this way!</p>
 
-    <p>Resuming @ Finding Strings in Strings (more <a href="finding_strings.py">here</a>)
-      <br>'find' method, built in procedure provided by Python, operates on strings:
-      <br>string.find(string)
+    <p>Finding Strings in Strings (more <a href="finding_strings.py">here</a>)
+      <br>'<b>find</b>' method, built in procedure provided by Python, operates on strings:
+      <br><span class="inline_code">string.find(string)</span>
       <br>output is position where that substring is found (first occurrence) as a number, i.e. where in target string the search string is found
       <br>If target string is not found, the output will be -1
       <br>Note that Python is case sensitive!
       <br>According to Python, every string begins with an empty string (?)
       <br>'<b>parameters</b>' are what go inside parentheses</p>
-    <p>To find other occurrences, pass a second parameter:
-      <br>my_string = "hello, hello"
-      <br>print my_string.find('h') should return 0 for the first occurrence
-      <br>print my_string.find('h', 1) should return 7
-      <br><em>Note that 1 tells find what position to begin search, in the above string 1 refers to the first e, not the first occurence of 'h'</em></p>
-    <p>for the same string as above
-      <br>print my_string.find('e') should return 1
-      <br>print my_string.find('e', 3) should return 8 because it started looking for 'e' at the second l</p>
+    <p>To find other occurrences, pass a second parameter:</p>
+      <div class="CodeParent">
+        <div class="CodeLeft">
+          <p>my_string = "hello, hello"
+          <br>print my_string.find('h')
+          <br>print my_string.find('h', 1)
+          <br>print my_string.find('e')
+          <br>print my_string.find('e', 3)</p>
+        </div>
+        <div class="CodeRight">
+          <p>Should return 0 for the first occurrence of 'h'
+          <br>the second should return 7
+          <br>third should return 1
+          <br>last should return 8 because it started looking for 'e' at the second l</p>
+        </div>
+      </div>
+      <p><em>Note that 1 tells find what position to begin search, in the above string 1 refers to the first e, not the first occurence of 'h'</em></p>
 
   <h3 class="NotesTitle">Work Session 2</h3>
     <p>See .py above
       <br>Continues at Variables 1 in <a href="variables1.py">this</a> file</p>
     <p>Replacing Strings</p>
-      <br>The method replace() returns a copy of the string in which the occurrences of old have been replaced with new, optionally restricting the number of replacements to max
-      <br>Like this: str.replace(old, new[, max])
-      <br>More simply: test_string.replace(old, new)
+      <br>The method <span class="inline_code">replace()</span> returns a copy of the string in which the occurrences of old have been replaced with new, optionally restricting the number of replacements to max
+      <br>Like this: <span class="inline_code">str.replace(old, new[, max])</span>
+      <br>More simply: <span class="inline_code">test_string.replace(old, new)</span>
       <p>An example:
-        <br>sentence = "I am a NOUN"
-        <br>print sentence.replace("NOUN", "bird")</p>
-      <p>Replace method allows us achieve the same outcome as slice and concatenate, but much more simply!</p>
+        <div class="CodeParent">
+          <div class="CodeLeft">
+            <p>sentence = "I am a NOUN"
+            <br>print sentence.replace("NOUN", "bird")</p>
+          </div>
+          <div class="CodeRight">
+            <p>Replace method allows us achieve the same outcome as slice and concatenate, but much more simply!</p>
+          </div>
+        </div>
+
+  <h3 class="NotesTitle">Input --> Function --> Output</h3>
+    <p>functions (aka "procedures")
+    <br>Simple example:</p>
+    <div class="Code">
+      <p>def say_hello(name):
+      <br>greeting = "Hello " + name + "!"
+      <br>return greeting</p>
+      <p>print say_hello("Miriam")
+      <br>print say_hello("Andy")</p>
+    </div>
+    <p>Above 'name' is a <b>parameter</b> of the <b>function</b> say_hello</p>
+    <p>functions have '<b>inputs</b>' and '<b>outputs</b>'</p>
+    <p>Focus checkpoint, we want to understand:</p>
+      <ul>
+        <li>what a function is</li>
+        <li>how to make one</li>
+        <li>how to use one</li>
+        <li>when to use one</li>
+        <li>why they are valuable</li>
+      </ul>
+    <p><span class="inline_code">def</span> and <span class="inline_code">return</span> are important components!</p>
+    <p><b>Using Functions</b> (related .py <a href="procedures.py">here</a>)
+    <br><span class="inline_code">function(input1, input2)</span>
+    <br>'inputs' aka '<b>operands</b>' or '<b>arguments</b>'
+    <br>return determines the output of the function</p>
+    <div class="CodeParent">
+      <div class="CodeLeft">
+        <p>def rest_of_string(s):
+        <br>&nbsp;&nbsp;return s[1:]</p>
+        <p>print rest_of_string('audacity')</p>
+      </div>
+      <div class="CodeRight">
+        <p>Interpreter will run code defined within the function and assign to function parameters that values passed as input (in this case the string 'audacity'), i.e. now s = 'audacity'
+        <br><span class="inline_code">return</span> jumps us back to where we called the function
+        <br>output = 'udacity'</p>
+      </div>
+    </div>
+    <p>procedures <em>map inputs to outputs</em></p>
+    <p>Notice the differences between how functions are defined vs used (or 'called):
+      <br><span class="inline_code">def rest_of_strings(s):</span> versus <span class="inline_code">print rest_of_string("audacity")</span>
+      <br>s is a parameter of our function and audacity is a value passed as input to that function</p>
+      <p>Number of inputs must match the number of parameters the function expects</p>
+      <p><span class="inline_code">find()</span> method is an example of a function defined in Python
+      <br>It has an additional input compared to functions you define yourself (i.e. 'input1' below) and has a set number of inputs as defined in Python
+      <br><span class="inline_code">input1.find(input2, input3)</span></p>
+      
+
+
+
+
+
       
 </div><!-- this will close the "Stage2" div -->     
         
