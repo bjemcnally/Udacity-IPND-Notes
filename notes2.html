@@ -278,7 +278,44 @@
       <p><span class="inline_code">find()</span> method is an example of a function defined in Python
       <br>It has an additional input compared to functions you define yourself (i.e. 'input1' below) and has a set number of inputs as defined in Python
       <br><span class="inline_code">input1.find(input2, input3)</span></p>
-      
+
+    <p>Resuming @ Sum Procedure Quiz (relevant .py <a href="sum.py">here</a>)</p>
+    <p>without <span class="inline_code">return</span>, functions do not produce any output</p>
+    <p>adding <span class="inline_code">print</span> statements can help with debugging code</p>
+    
+    <div class="InterestingNotes">
+      <p>The following are notes from the <a href="https://discussions.udacity.com/t/stage-2-webcasts/16001/6">transcript</a> of a Python Basics live event</p>
+      <ul>
+        <li>"When you define a function, any variables which are created inside of the function are destroyed when the function ends" = <b>local scope</b></li>
+        <li>This is different from <b>global scope</b>, i.e. a variable defined outside of any function
+        <div class="CodeParent">
+          <div class="CodeLeft">
+            <p>a = 0</p>
+            <p>def some_function():
+            <br>&nbsp;&nbsp;a = 5
+            <br>&nbsp;&nbsp;print "Function: " + str(a)</p>
+            <p>some_function()
+            <br>print "Global: " + str(a)</p>
+          </div>
+          <div class = "CodeRight">
+            <p>a = 0 defines a variable and, despite what occurs inside the function, the global definition of a is unchanged!</p>
+          </div>
+        </div></li>
+        <li><b>mutable</b> value is one that can be altered (i.e. sets, lists, dictionaries), you can change the value that is being pointed to without changing the pointer</li>
+        <li><b>immutable</b> value is changed by pointing to a new value</li>
+        <li>"if we want an immutable value back from a function, <span class="inline_code">return</span> the value!"</li>
+        <li>"<span class="inline_code">return</span> will return the result of a function so it can be used <em>outside</em> of that function"</li>
+        <li>Good Python style:  indent with either 2 or 4 spaces (just be consistent!), name variables or functions with regard to their content so you don't need to add as many comments, comments should explain how/why a particular section was coded!</li>
+      </ul>
+      <p><b>Learn More: Problem Solving</b></p>
+      <p>When solving problems in Python, identify the inputs and outputs, identify how to get from input to output, then code!</p>
+      <p>These problems are way beyond anything we have covered so far! Come back to them later...</p>
+      <p><b>Square Quiz</b> (<a href="square.py">relevant .py</a>)</p>
+      <p><b>Procedure composition</b> - use the output of one procedure (function) as the input of another!</p>
+
+      <!-- stopped before Work Session 3 -->
+
+
 
 
 

@@ -122,7 +122,7 @@ h2 {
 
 .CodeParent {
   background-color: #b3c2bf;
-  padding: 30px;
+  padding: 20px;
   border-radius: 10px;
   display: -webkit-flex;
   display: flex;
@@ -138,7 +138,7 @@ h2 {
   background-color: #e9ece5;
   margin: 0 auto;
   border-radius: 10px;
-  padding: 20px;
+  padding: 10px;
   border-style: dotted;
   border-color: #c0dfd9;
   border-width: 10px;
