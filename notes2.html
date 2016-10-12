@@ -41,13 +41,13 @@
   <h3 class="NotesTitle">Intro: Code Your Own Quiz</h3>
     <p>Concepts, Tools, and setting up workspace...</p>
     <p>Being comfortable makes everything easier and more efficient</p>
-    <p>This program uses Python 2 :( oh well...
+    <p>This program uses Python 2</p>
     <p>Re-installed Python 2.7 to make sure I have everything set properly for this course</p>
     <p>To use <b>Code Runner</b> in Visual Studio Code (VS Code), press Control+Alt+N, to stop running code press Control+Alt+M</p>
     <p>Use # symbol to add notes in Python</p>
     <p>Get in habit of running code this way!</p>
     <p><b>Git Bash</b>
-      <br>MinTTY requires command line to be written like this:
+      <br>MinTTY requires command line to be written like this:</p>
       <div class="CodeParent">
         <div class="CodeLeft">
           $ <b>winpty</b> python file_name.py
@@ -58,7 +58,7 @@
       </div>
       <p>Also: Windows users need to use <span class="inline_code">start</span> command instead of <span class="inline_code">open</span> to open a file in its default program.</p>
     <p><b>Graphical User Interface (GUI or "gwee")</b> - visual way of interacting with computer with windows, buttons, mouse, etc.</p>
-    <p><b>Command Line Interface (CLI)</b> - e.x. Terminal, Git Bash, Powershell, etc.
+    <p><b>Command Line Interface (CLI)</b> - e.x. Terminal, Git Bash, Powershell, etc.</p>
     <ul>
       <li><b><span class="inline_code">pwd</span> = print working directory</b>, "where am I?", will print out path to current directory (what GUI calls a folder)
         <br>When CLI is first opened it starts in the <b>home directory</b> (in my case this is C:/Users/bjerickson)</li>
@@ -70,7 +70,7 @@
         <br> cd into animals than mkdir rodents
         <br>OR from Desktop, "mkdir animals/rodents"
         <p>to make several new directories, separate them with a space: <span class="inline_code">mkdir cats dogs marsupials</span>
-          <br>for this reason, <b>it is not a good idea to put spaces in your directory or filenames!!</b></li>
+          <br>for this reason, <b>it is not a good idea to put spaces in your directory or filenames!!</b></p></li>
       <li><span class="inline_code">touch</span><, creates new files in one step, ex <span class="inline_code">touch first_file.txt</span> will create brand new, empty text file, you can verify that it was made using <span class="inline_code">ls</span>, can make a file in a directory other than current directory by specifying filepath (as with <span class="inline_code">ls</span>ls and <span class="inline_code">cd</span>), and to create multiple files separate with spaces (as with <span class="inline_code">mkdir</span>)</li>
       <li><span class="inline_code">rm</span> is used to delete a file completely (not move it to the trash), can delete multiple files by separating names with spaces as before</li>
       <li>There are two ways to remove directories:
@@ -222,7 +222,7 @@
       <br>The method <span class="inline_code">replace()</span> returns a copy of the string in which the occurrences of old have been replaced with new, optionally restricting the number of replacements to max
       <br>Like this: <span class="inline_code">str.replace(old, new[, max])</span>
       <br>More simply: <span class="inline_code">test_string.replace(old, new)</span>
-      <p>An example:
+      <p>An example:</p>
         <div class="CodeParent">
           <div class="CodeLeft">
             <p>sentence = "I am a NOUN"
@@ -307,11 +307,128 @@
         <li>"<span class="inline_code">return</span> will return the result of a function so it can be used <em>outside</em> of that function"</li>
         <li>Good Python style:  indent with either 2 or 4 spaces (just be consistent!), name variables or functions with regard to their content so you don't need to add as many comments, comments should explain how/why a particular section was coded!</li>
       </ul>
+    </div>
       <p><b>Learn More: Problem Solving</b></p>
       <p>When solving problems in Python, identify the inputs and outputs, identify how to get from input to output, then code!</p>
       <p>These problems are way beyond anything we have covered so far! Come back to them later...</p>
       <p><b>Square Quiz</b> (<a href="square.py">relevant .py</a>)</p>
       <p><b>Procedure composition</b> - use the output of one procedure (function) as the input of another!</p>
+
+  <h3 class="NotesTitle">Work Session 3 (<a href="udacify.py">relevant .py</a>)</h3>
+    <p>Keep in mind the following when setting up functions:</p>
+    <ul>
+      <li>must begin with <span class="inline_code">def</span></li>
+      <li>followed by the functions' name</li>
+      <li>then a set of parentheses with the parameters inside</li>
+      <li>the first line must end with a <span class="inline_code">:</span> colon</li>
+      <li>within the function, every line must be indented</li>
+      <li>and... in order for it to produce an output, it must end with a <span class="inline_code">return</span> statement</li>
+      <li>to call a function: <span class="inline_code">function_name(parameter1, parameter2, etc)</span></li>
+      <li>finally, must include a print statement to view the output!</li>
+    </ul>
+    <p><b>Print vs Return Quiz</b></p>
+      <p>If <span class="inline_code">print</span> statement is <em>before</em> <span class="inline_code">return</span> statement, the <span class="inline_code">print</span> will never be executed! Recall that <span class="inline_code">return</span> essentially takes the interpreter back to where the function was called!!! Therefore it ignores anything after <span class="inline_code">return</span>!</p>
+
+  <h3 class="NotesTitle">Control Flow & Loops: If and While (<a href="control_flow.py">relevant .py</a>)</h3>
+    <p><span class="inline_code">if</span> statements control which code gets executed when</p>
+    <p><span class="inline_code">while</span> loops make code that performs the same task many times</p>
+    <p><b>Making decisions</b>
+      <br>comparison operators: &lt;, &gt;, &lt;=, &gt;=, != (not equal to), == (<em>double equal used in comparisons</em> vs single used when defining variables-- it means assignment), etc.
+      <br>Output of comparison is not a number, it is a <b>Boolean value</b>: True or False</p>
+    <p><b>If Statements</b></p>
+      <div class="CodeParent">
+        <div class="CodeLeft">
+          <p>def absolute(x):
+            <br>&nbsp;&nbsp;if x < 0:
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;x = -x
+            <br>&nbsp;&nbsp;return x</p>
+        </div>
+        <div class="CodeRight">
+          <p>Code within if statement (aka '<b>block</b>') will run only if if statement is True</p>
+          <p>Example will change value of x if it is negative</p>
+        </div>
+      </div>
+      <p><span class="inline_code">else</span> is executed when <span class="inline_code">if</span> statement is False</p>
+      <div class="CodeParent">
+        <div class="CodeLeft">
+          <p>def bigger(a, b):
+            <br>&nbsp;&nbsp;if a > b:
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;return a
+            <br>&nbsp;&nbsp;else:
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;return b</p>
+        </div>
+        <div class="CodeRight">
+          <p>Else statements help make code symmetrical</p>
+        </div>
+      </div>
+      <div class="CodeParent">
+        <div class="CodeLeft">
+          <p>def bigger(a, b):
+            <br>&nbsp;&nbsp;if a > b:
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;r = a
+            <br>&nbsp;&nbsp;else:
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;r = b
+            <br>&nbsp;&nbsp;return r</p>
+        </div>
+        <div class="CodeRight">
+          <p>This will also work, but makes the program bigger
+            <br>Generally, it's better to go for smaller programs!
+            <br>In this case, the bigger version may be better because it is a little easier to understand</p>
+        </div>
+      </div>
+      <p><b>Or Operator</b></p>
+        <p>Compare code on left vs right below</p>
+        <div class="CodeParent">
+          <div class="CodeLeft">
+            <p>def is_friend(name):
+            <br>&nbsp;&nbsp;if name[0] == 'D':
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;return True
+            <br>&nbsp;&nbsp;if name[0] == 'N':
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;return True
+            <br>&nbsp;&nbsp;return False</p>
+          </div>
+          <div class="CodeLeft">
+            <p>def is_friend(name):
+            <br>&nbsp;&nbsp;return name[0] == 'D' or name[0] == 'N'</p>
+          </div>
+        </div>
+        <p><span class="inline_code">or</span> is another comparison operator
+          <br>it only evaluates what it needs to, if first expression is <span class="inline_code">True</span> it will return <span class="inline_code">True</span>, only if first expression is <span class="inline_code">False</span> does it evaluate second operand/expression</p>
+        <p><b>Biggest Quiz</b>
+        <p>for more info see .py linked above...but, compare the following three correct answers</p>
+        <div class="Code">
+          <p>def biggest(a, b, c):
+          <br>&nbsp;&nbsp;if a > b:
+          <br>&nbsp;&nbsp;&nbsp;&nbsp;if a > c: # a is the biggest
+          <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return a
+          <br>&nbsp;&nbsp;&nbsp;&nbsp;else:
+          <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return c # c is the biggest
+          <br>&nbsp;&nbsp;else: # if a < b
+          <br>&nbsp;&nbsp;&nbsp;&nbsp;if b > c:
+          <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return b # b is biggest
+          <br>&nbsp;&nbsp;&nbsp;&nbsp;else: return c</p>
+        </div>
+        <div class="Code">
+          <p>def bigger(a, b):
+          <br>&nbsp;&nbsp;if a > b:
+          <br>&nbsp;&nbsp;&nbsp;&nbsp;return a
+          <br>&nbsp;&nbsp;else:
+          <br>&nbsp;&nbsp;return b</p>
+          <p>def biggest(a, b, c):
+          <br>&nbsp;&nbsp;return bigger(bigger(a,b),c)</p>
+        </div>
+        <p>Or use the built-in operator: <span class="inline_code">return max(a,b,c)</span></p>
+        <p><b>Using just arithmetic, comparisons, functions, and <span class="inline_code">if</span> statements we now know enough (in theory) to write every possible computer program!</b>
+        <br>However, there are more powerful constructs that will let us do what we want with less code and more elegantly</p>
+
+
+        <!-- add notes from .py re bigger and biggest here!!! -->
+
+
+    
+
+
+
 
       <!-- stopped before Work Session 3 -->
 
