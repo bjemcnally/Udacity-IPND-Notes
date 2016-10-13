@@ -396,6 +396,7 @@
           <br>it only evaluates what it needs to, if first expression is <span class="inline_code">True</span> it will return <span class="inline_code">True</span>, only if first expression is <span class="inline_code">False</span> does it evaluate second operand/expression</p>
         <p><b>Biggest Quiz</b>
         <p>for more info see .py linked above...but, compare the following three correct answers</p>
+        <div class="ImageDescription">
         <div class="Code">
           <p>def biggest(a, b, c):
           <br>&nbsp;&nbsp;if a > b:
@@ -407,6 +408,10 @@
           <br>&nbsp;&nbsp;&nbsp;&nbsp;if b > c:
           <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return b # b is biggest
           <br>&nbsp;&nbsp;&nbsp;&nbsp;else: return c</p>
+        </div>
+        <div class="Image">
+          <img src="biggest.png" alt="Comparison flow chart for code at left" width="400">
+        </div>
         </div>
         <div class="Code">
           <p>def bigger(a, b):
@@ -420,6 +425,38 @@
         <p>Or use the built-in operator: <span class="inline_code">return max(a,b,c)</span></p>
         <p><b>Using just arithmetic, comparisons, functions, and <span class="inline_code">if</span> statements we now know enough (in theory) to write every possible computer program!</b>
         <br>However, there are more powerful constructs that will let us do what we want with less code and more elegantly</p>
+       
+        <p><b>While Loops</b> (<a href="while.py">relevant .py</a> starting here)</p>
+        <p>Loops, way to do things over and over</p>
+        <p><span class="inline_code">while</span> loop: </p>
+          <div class="Code">
+            <p>while expression: 
+            <br>&nbsp;&nbsp;block</p>
+          </div>
+        <p>As we saw with <span class="inline_code">if</span> statements, the block is a set of instructions
+        <br>with <span class="inline_code">if</span> the block evaluates either 0 or 1 times depending on whether the test expression is <span class="inline_code">True</span>
+        <br>with <span class="inline_code">while</span> the block continues to be evaluated as long as the test expression ('expression' above) is <span class="inline_code">True</span></p>
+        <p>A simple example:</p>
+        <div class="Code">
+          <p>i = 0
+          <br>while i < 10:
+          <br>&nbsp;&nbsp;print i
+          <br>&nbsp;&nbsp;i = i + 1</p>
+        </div>
+        <p>Important to note: after this loop, the new value of i is 10! While loop does not require a <span class="inline_code">return</span> statement!</p>
+
+        <p><b>Break Statements</b>
+        <br><span class="inline_code">break</span> gives us a way to stop the loop while the test conditions are <span class="inline_code">True</span>, it tells to interpreter to jump out of the while loop and continue with any code that comes next
+        <p>A simple example:</p>
+        <div class="Code">
+          <p>while test_expression:
+          <br>&nbsp;&nbsp;Python code goes here
+          <br>&nbsp;&nbsp;if break_test:
+          <br>&nbsp;&nbsp;&nbsp;&nbsp;break</p>
+        </div>
+        <p>As soon as break test is <span class="inline_code">True</span> we exit the loop</p>
+
+
 
 
         <!-- add notes from .py re bigger and biggest here!!! -->
