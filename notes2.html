@@ -394,7 +394,7 @@
         </div>
         <p><span class="inline_code">or</span> is another comparison operator
           <br>it only evaluates what it needs to, if first expression is <span class="inline_code">True</span> it will return <span class="inline_code">True</span>, only if first expression is <span class="inline_code">False</span> does it evaluate second operand/expression</p>
-        <p><b>Biggest Quiz</b>
+        <p><b>Biggest Quiz</b></p>
         <p>for more info see .py linked above...but, compare the following three correct answers</p>
         <div class="ImageDescription">
         <div class="Code">
@@ -446,7 +446,7 @@
         <p>Important to note: after this loop, the new value of i is 10! While loop does not require a <span class="inline_code">return</span> statement!</p>
 
         <p><b>Break Statements</b>
-        <br><span class="inline_code">break</span> gives us a way to stop the loop while the test conditions are <span class="inline_code">True</span>, it tells to interpreter to jump out of the while loop and continue with any code that comes next
+        <br><span class="inline_code">break</span> gives us a way to stop the loop while the test conditions are <span class="inline_code">True</span>, it tells to interpreter to jump out of the while loop and continue with any code that comes next</p>
         <p>A simple example:</p>
         <div class="Code">
           <p>while test_expression:
@@ -456,26 +456,62 @@
         </div>
         <p>As soon as break test is <span class="inline_code">True</span> we exit the loop</p>
 
+  <h3 class="NotesTitle">Debugging (<a href="debugging.py">relevant .py</a>)</h3>
+    <p><b>Bugs Happen!</b>
+    <br>Bugs are inevitable! Develop a strategy for getting rid of them.</p>
+    <p>Sometimes the bug causes the program to crash, in this case Python will give you a '<b>traceback</b>' error, this will tell you where it crashed, including line number and function name, even if the error is not on that line, it <em>is</em> somewhere upstream from there</p>
+    <p>You can always Google the error message! e.x. <span class="inline_code">TypeError: unsupported operand type(s) for +: 'int' and 'str'</span>
+      <br>in this case, you can't concatenate a number and a string, so you must use the <span class="inline_code">str()</span> function to 'stringify' the number (see .py)</p>
+    <p>When learning a new feature or language, you will often start with example code and then change it to do what you want it to
+    <p>If that doesn't work...</p>
+      <ul>
+        <li>'comment out' your code</li>
+        <li>copy and paste the example code</li>
+        <li>run it to make sure the example does what it should</li>
+        <li>then modify in small steps until it does what you wanted</li>
+        <li>then compare to your original code to see if you can find the bug</li>
+      </ul>
+    <p>All example code is not created equal! Sometimes it contains its own bugs and other times there are simply better examples to work from!</p>
+    <p>Bugs don't always cause programs to crash, these can be trickier to deal with!</p>
+    <p>If a function calculates an incorrect value, you often need to break it up into smaller pieces to find where it went wrong</p>
+    <p>One easy way to do this is to introduce <span class="inline_code">print</span> statements that output the variables where you can see them to check for weirdness</p>
+    <p><b>Keep and Compare Old Versions!</b>
+      <br>Comment out old version with hash mark (#) or turn it into a big string by putting ''' (triple quotes) around it, this is called a '<b>docstring</b>' which is a multiline string (use either # or ''' and be consistent!)</p>
+    <p>Or copy code to different file and save it for your reference</p>
+    <p>Keeping old versions is useful when you ask for help because you can show 2-3 different things that you've tried</p>
+    <p>Version control systems like Git make this even easier</p>
+    <p><b>Debugging Recap</b></p>
+      <ol>
+        <li>Examine error messages</li>
+        <li>Work from example code</li>
+        <li>Make sure examples work</li>
+        <li>Check (print) intermediate results</li>
+        <li>Keep and compare old versions</li>
+      </ol>
+    <p>Debugging isn't just finding and correcting errors, it is a really important skill and scientific process (i.e. it uses the scientific method!) Udacity has an entire course dedicated to debugging!</p>
+    <p>Comments are helpful because they allow you to compare what the code should be doing with what it actually does (i.e. it is a good idea to put the 'should' in comments as you go)</p>
+    <p><b>Commenting tips:</b></p>
+      <ul>
+        <li>Don't comment 'obvious code' (i.e. code that is self explanatory)</li>
+        <li>Start functions with a comment, e.x.:
+          <div class="Code">
+            <p>def isLeapYear(year):
+            <br><em># takes a number as input and outputs True if the number
+            <br># represents a leap year and False otherwise</em></p>
+          </div></li>
+        <li>Keep comments up-to-date, change them as your code changes</li>
+        <li>Be concise</li>
+      </ul>
+      <div class="InterestingNotes">
+        <p>Notes from <a href="http://discussions.udacity.com/t/stage-2-webcasts/16001/2">this</a> Learn More session transcript:</p>
+        <ul>
+          <li><b>Test often!</b> Test each small piece as you go to minimize debugging time and to make it easier to reuse code later</li>
+        </ul>
+      </div>
+
+  <h3 class="NotesTitle">Work Session 4 (<a href="XXX">relevant .py</a>)</h3>
 
 
-
-        <!-- add notes from .py re bigger and biggest here!!! -->
-
-
-    
-
-
-
-
-      <!-- stopped before Work Session 3 -->
-
-
-
-
-
-
-
-      
 </div><!-- this will close the "Stage2" div -->     
         
   <!-- <div>
