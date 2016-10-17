@@ -515,7 +515,7 @@
     <p>Include the following at the start of the .py:</p>
     <p><span class="inline_code">from random import randint</span></p>
     <p>Stage 3 will cover more about <span class="inline_code">import</span> statements</p>
-    <p>basic structure: <span class="inline_code">randint(low,high)</span> where low and high are arguments that define the range from which the number should be selected, in this class both low and high are included in this range</p>
+    <p>basic structure: <span class="inline_code">randint(low,high)</span> where low and high are arguments that define the range from which the number should be selected, in this case both low and high are included in this range</p>
     <div class="CodeParent">
       <div class="CodeLeft">
         <p>from random import randint
@@ -525,9 +525,117 @@
         <p>This will select a number from 1-3</p>
       </div>
     </div>
+    <p><b>Median Quiz</b>
+    <br>Below are answers to the Median quiz. Left is my final answer that was a valid solution, right is the <em>much</em> better answer from the solution video. Make sure you understand the one on the right!</p>
+    <div class="CodeParent">
+      <div class="Code">
+      <p>def median(a,b,c):
+      <br>&nbsp;&nbsp;if a >= b:
+      <br>&nbsp;&nbsp;&nbsp;&nbsp;if c <= a and c >= b:
+      <br>&nbsp;&nbsp;&nbsp;&nbsp;return c
+      <br>&nbsp;&nbsp;if c >= a:
+      <br>&nbsp;&nbsp;&nbsp;&nbsp;return a
+      <br>&nbsp;&nbsp;return b
+      <br>&nbsp;&nbsp;if c >= a and c <= b:
+      <br>&nbsp;&nbsp;&nbsp;&nbsp;return c
+      <br>&nbsp;&nbsp;if c >= b:
+      <br>&nbsp;&nbsp;&nbsp;&nbsp;return b
+      <br>&nbsp;&nbsp;else:
+      <br>&nbsp;&nbsp;&nbsp;&nbsp;return a</p>
+      </div>
+      <div class="Code">
+        <p>def bigger(a,b):
+        <br>&nbsp;&nbsp;if a > b:
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;return a
+        <br>&nbsp;&nbsp;else:
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;return b</p>
+
+        <p>def biggest(a,b,c):
+        <br>&nbsp;&nbsp;return bigger(a,bigger(b,c))</p>
+
+        <p>def median(a,b,c):
+        <br>&nbsp;&nbsp;big = biggest(a,b,c) # eliminates one number as median
+        <br>&nbsp;&nbsp;if big == a:
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;return bigger(b,c)
+        <br>&nbsp;&nbsp;if big == b:
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return bigger(a,c)
+        <br>&nbsp;&nbsp;else:
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;return bigger(a,b)</p>
+      </div>
+    </div>
+
     <p><b>Mad Libs: Take 1 (<a href="madlibs_take1.py">relevant .py</a>)</b>
     <br>Start by making a plan!</p>
     <p>If your code gets messy and is buggy and doesn't seem to be working, it may be a good idea to find another approach</p>
+    <p>My first attempt at this quiz did not go well (above), but the next day: <a href="madlibs_take1-1.py">SUCCESS!</a>
+    <br>Note: one main difference between my answer and the correct answer is that, instead of adding the number 4, he defined a variable box_length = 4. This makes the significance of the number 4 more clear!</p>
+
+  <h3 class="NotesTitle">Structured Data: Lists and For Loops (<a href="structured.py">relevant .py</a>)</h3>
+  <p>"strings" are a type of structured data, we can break them down into individual characters and operate on subsequences</p>
+  <p><b>Lists</b> can be sequence of anything: characters, strings, numbers, lists, etc. AND a combination of any of those</p>
+
+  <p>Example string, s: <span class="inline_code">s = 'yabba!'</span>, i.e. identified using quotes
+  <br>We can index an individual character: <span class="inline_code">s[0]</span>, i.e. 'y'
+  <br>Use colon inside square brackets to select substring: <span class="inline_code">s[2:4]</span>, i.e. 'bb' a string
+  </p>
+
+  <p>Example list, p: <span class="inline_code">p = ['y','a','b','b','a','!']</span>, i.e. identified using square brackets ([]) where individual elements are separated by commas
+  <br>We can access list elements in a similar way: <span class="inline_code">p[0]</span>, i.e. 'y'
+  <br>Similar for lists: <span class="inline_code">p[2:4]</span>, i.e. ['b','b']. Notice that instead of a string, this returns a 'sub-list' with just those elements
+  </p>
+
+  <p>Lists can have 0, 1, or any number of elements and can even contain other lists</p>
+
+  <p>When you <span class="inline_code">print</span> a list, the whole thing is printed, including the brackets, quotes, and commas</p>
+
+  <p>Lists are ordered!</p>
+
+  <p>If you have a list of lists ('<b>nested list</b>'), you can access the individual lists AND elements in each list</p>
+
+  <p>Example nested list: <span class="inline_code">mixed_up = ['apple', 3, 'oranges',27,[1,2,['alpha','beta']]]</span>, here the 5th element is a list that also contains a list</p>
+
+  <p>Better, more useful example (Name, birth year): </p>
+    <div class="CodeParent"> 
+      <div class="CodeLeft">
+        <p>beatles = [['John', 1940],['Paul', 1942],
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;['George', 1943], ['Ringo', 1940]]</p>
+        <p>print beatles[3][0]</p>
+      </div>
+      <div class="CodeRight">
+        <p>To make it clear to the Python interpreter that this is all one list, while breaking it up onto different lines for readability, insert the break after a comma and indent properly (as shown)</p>
+        <p>This print statement will index the 1st element of the 4th element in the list <span class="inline_code">beatles</span>, i.e. Ringo</p>
+      </div>
+    </div>
+    
+    <p>New vocab words RE: Lists:
+      <ul>
+        <li><b>mutation</b> - supported by lists and not strings, we can change the value of a list <em>after</em> we've created it!
+        <p>For a string, concatenation does not change the string, it creates a whole new string:</p>
+        <div class="Code">
+          <p>s = 'Hello'
+          <br>s = 'Yello'
+          <br>s = s + 'w'</p>
+        </div>
+        <p>For lists:
+        <div class="Code">
+          <p>p = ['H','e','l','l','o']
+          <br>p = ['Y','e','l','l','o'] # creates a new list
+          <br>p[0] = 'Y' # <b>mutates</b> an element to a new value!</p>
+        </div>
+        <p>If you introduce a new variable and then mutate it, it changes the value of BOTH lists (following from above):
+        <div class="Code">
+          <p>q = p
+          <br>q[4] = '!'</p>
+        </div>
+        <p>Now <span class="inline_code">q = p = ['Y','e','l','l','!']</span></p>
+        <p>In other words: strings are not mutable! You can not change their value</p>
+        <!--- stopped in the middle of Yello Mutation Video -->
+        </li>
+        <li><b>aliasing</b> - </li>
+      </ul>
+
+
+
     
 
 
