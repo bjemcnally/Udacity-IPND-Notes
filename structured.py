@@ -135,3 +135,57 @@ s = 'Hello'
 # s[0] = 'Y' 
 # this does not work on strings!
 
+p = ['H','e','l','l','o']
+q = p
+print p, q
+p[0] = 'Y' # this changes the value of both p AND q!!
+print p
+print q
+
+# Secret Agent Man Quiz
+
+# What is the value of agent[2] after the following code runs?
+
+spy = [0,0,7]
+agent = spy # = [0,0,7]
+spy[2] = agent[2] + 1 # agent[2] + 1 = 8 = spy[2] = agent[2]
+
+# My answer = 8
+print agent[2] # double check
+print agent, spy
+# This was correct!
+
+# Replace Spy Quiz
+
+# Define a procedure, replace_spy,
+# that takes as its input a list of
+# three numbers, and modifies the
+# value of the third element in the
+# input list to be one more than its
+# previous value.
+
+spy = [0,0,7]
+
+# MY ANSWER
+
+def replace_spy(spy):
+   spy[2] += 1
+   return spy
+
+# this seemed to work... YUP!
+
+# In the test below, the first line calls your 
+# procedure which will change spy, and the 
+# second checks you have changed it.
+# Uncomment the top two lines below.
+
+replace_spy(spy)
+print spy
+#>>> [0,0,8]
+
+# Video answer
+
+def replace_spy(p):
+    p[2] = p[2] + 1
+# return statement is unnecessary
+  

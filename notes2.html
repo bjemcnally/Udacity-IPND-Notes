@@ -629,15 +629,63 @@
         </div>
         <p>Now <span class="inline_code">q = p = ['Y','e','l','l','!']</span></p>
         <p>In other words: strings are not mutable! You can not change their value</p>
-        <!--- stopped in the middle of Yello Mutation Video -->
+        <p>If an object is mutable, we have to worry about other variables that might refer to the same object (e.x. q and p above and in .py)</p>
         </li>
-        <li><b>aliasing</b> - </li>
+        <li><b>aliasing</b> - two different ways to refer to the same object
+        <p>e.x. James Bond and 007 refer to the same person, if something happens to James Bond, it affects the state of both James Bond and 007</p>
+        <p>If we have two variables names refering to the same object, changes to one change <b>both</b>!</p>
+        <div class="Code">
+          <p>p = ['J','a','m','e','s']
+          <br> p = q
+          <br>p[2] = 'n' # this changes the value of both p AND q
+          <br>p = [0,0,7] # this also changes the value of both</p>
+        </div>
+        </li>
       </ul>
+      <p>When using a function the parameter and input are (at least temporarily) aliases:</p>
+      <div class="Code">
+        <p>def replace_spy(p):
+        <br>&nbsp;&nbsp;p[2] = p[2] + 1</p>
+        <p>spy = [0,0,7]
+        <br>replace_spy(spy)
+        <br>print spy</p>
+      </div>
+      <p>In this example <span class="inline_code">p</span> and <span class="inline_code">spy</span> refer to the same object inside the function</p>
+      <p>This is different from the following function:</p>
+      <div class="Code">
+        <p>def inc(n):
+        <br>&nbsp;&nbsp;n = n + 1
+        <br>&nbsp;&nbsp;return n</p>
+      </div>
+      <p>Removing the <span class="inline_code">return</span> statement from <span class="inline_code">inc</span> does not change the value of the input, only (temporarily) changes the value of <span class="inline_code">n</span> inside the function</p>
+      <p>Numbers are immutable!</p>
+      
+      <p><b>List Operations (new <a href="list_operations.py">relevant .py</a>)</b>
+      <br>Using lists we can build very complex data structures and do lots of interesting things!</p>
+      <p><span class="inline_code">list_name.append(new_element)</span> - is a method for lists that adds a new element to the end of our list, it mutates the list that it is envoked on, <em>it does not create a new list!</em></p>
+      <p><span class="inline_code">list1 + list2</span> - plus sign here operates like concatenation for strings, it does not change either list, it generates a new list!</p>
+      <p><span class="inline_code">len(list)</span> - gives the length of any object (lists, strings, etc.), output is the number of elements (or characters in a string)
+      <br>e.x. <span class="inline_code">len([0,1])</span> is 2</p>
+      <p><span class="inline_code">len</span> only counts the outer elements so if you have a list of lists, it counts the number of children lists in the parent list, not the total number of elements in the children lists</p>
 
+      <p><b>For Loops</b>
+      <br><span class="inline_code">for</span> allows us to loop through lists in more targeted manner than <span class="inline_code">while</span></p>
 
-
-    
-
+      <p>General structure:</p>
+      <div class="Code">
+        <p>for name in list:
+        <br>&nbsp;&nbsp;block</p>
+      </div>
+      <p>Above name is a variable, for each element in the list we assign an element to the name then do something with them, e.x.</p>
+      <div class="Code">
+        <p>def print_all_elements(p):
+        <br>&nbsp;&nbsp;for e in p:
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;print e</p>
+        <p>my_list = [1,2,[3,4]]
+        <br>print_all_elements(my_list)</p>
+      </div>
+      <p>The above will print each element in the input list on a separate line</p>
+       <!-- stopped at Find Element -->
 
 </div><!-- this will close the "Stage2" div -->     
         
