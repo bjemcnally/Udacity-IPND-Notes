@@ -714,7 +714,34 @@
       </div>
       <p><a href="https://discussions.udacity.com/t/stage-2-webcasts/16001/10">Make a Game with Python</a></p>
 
-  <h3 class="NotesTitle">How to Solve Problems (<a href="XXX.py">relevant .py</a>)</h3>
+  <h3 class="NotesTitle">How to Solve Problems (<a href="how_to_solve.py">relevant .py</a>)</h3>
+  <p><b>Understanding a Problem...</b>
+  <br>means understanding the relationship between possible inputs and desired outputs</p>
+  <ol>
+    <li>What are the inputs?
+      <p>This may require <b>defensive programming</b>, in the example this would mean checking to make sure that the second date is not before the first date (that one can not be negative days old!)</p></li>
+    <li>What are the outputs?</li>
+    <li>Work through some examples by hand
+      <p>It may help to start by working out examples and intermediate steps, even starting on paper if necessary and thinking through the prboblem systematically</p>
+      <p>This might include thinking about what to do with invalid inputs</p></li>
+    <li>Come up with a simple mechanical solution
+      <p>It may be helpful to write out "<b>pseudocode</b>", just work out the idea and see if it makes sense in English, e.x. (from <a href="https://en.wikipedia.org/wiki/Leap_year#Algorithm">Wikipedia</a>
+        <br>if (year is not divisible by 4) then (it is a common year)
+        <br>else if (year is not divisible by 100) then (it is a leap year)
+        <br>else if (year is not divisible by 400) then (it is a common year)
+        <br>else (it is a leap year)</p>
+      <p>Sometimes the way humans solve problems is <em>NOT</em> the simplest way!</p>
+      <p>e.x. Instead of adding days + length of months , etc... I might be simpler to just write code to count days!</p></li>
+    <li>Don't optimize prematurely! Start with finding a simple and correct solution! Getting approximate answers at first is always a great confidence booster.</li>
+  </ol>
+  <div class="Code">
+    <p>def nextDay(year, month, day):
+    <br>&nbsp;&nbsp;if day < 30:
+    <br>&nbsp;&nbsp;&nbsp;&nbsp;return year, month, day + 1</p>
+  </div>
+  <p>The above was included to remind me that I learned that you can add to a tuple! (a finite ordered list of elements, in this case parameters to a particular function)</p>
+
+  
       
       
 
