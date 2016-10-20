@@ -462,7 +462,7 @@
     <p>Sometimes the bug causes the program to crash, in this case Python will give you a '<b>traceback</b>' error, this will tell you where it crashed, including line number and function name, even if the error is not on that line, it <em>is</em> somewhere upstream from there</p>
     <p>You can always Google the error message! e.x. <span class="inline_code">TypeError: unsupported operand type(s) for +: 'int' and 'str'</span>
       <br>in this case, you can't concatenate a number and a string, so you must use the <span class="inline_code">str()</span> function to 'stringify' the number (see .py)</p>
-    <p>When learning a new feature or language, you will often start with example code and then change it to do what you want it to
+    <p>When learning a new feature or language, you will often start with example code and then change it to do what you want it to</p>
     <p>If that doesn't work...</p>
       <ul>
         <li>'comment out' your code</li>
@@ -607,7 +607,7 @@
       </div>
     </div>
     
-    <p>New vocab words RE: Lists:
+    <p>New vocab words RE: Lists:</p>
       <ul>
         <li><b>mutation</b> - supported by lists and not strings, we can change the value of a list <em>after</em> we've created it!
         <p>For a string, concatenation does not change the string, it creates a whole new string:</p>
@@ -685,7 +685,38 @@
         <br>print_all_elements(my_list)</p>
       </div>
       <p>The above will print each element in the input list on a separate line</p>
-       <!-- stopped at Find Element -->
+
+      <p><b>Index Method (<a href="find_element.py">relevant .py</a>)</b>
+      <br>General syntax <span class="inline_code">list.index(value)</span>, where the output is the position where that value exists in the list</p>
+      <p>unlike <span class="inline_code">find()</span>, if the value does not exist <span class="inline_code">index()</span> returns an error instead of -1</p>
+      <p><span class="inline_code">index()</span> returns the location of the <em>first</em> incidence of the search value</p>
+
+      <p><span class="inline_code">in</span> method, e.x. <span class="inline_code">value in list</span>, if the value is not found, <span class="inline_code">in</span> returns <span class="inline_code">False</span>, if it is found it returns <span class="inline_code">True</span></p>
+
+      <p><span class="inline_code">not in</span> method, e.x. <span class="inline_code">value not in list</span> works in the same way</p>
+
+      <p>In the example we practiced, we used <span class="inline_code">index()</span> within an <span class="inline_code">if</span> statement</p>
+
+      <div class="InterestingNotes">
+        <p>Notes from another "Learn More" session <a href="http://discussions.udacity.com/t/stage-2-webcasts/16001/5">transcript</a>:</p>
+        <ul>
+          <li>This is a good example of a <span class="inline_code">while</span> loop:
+          <div class="Code">
+            <p>count = 0
+            <br>while count < n:
+            <br>&nbsp;&nbsp;do something...
+            <br>&nbsp;&nbsp;count += 1</p>
+          </div>
+          <p>It is highly recommended that whenever you code a <span class="inline_code">while</span> loop we first set up the structure and make sure our count variable increases in value, this will help us avoid infinite loops!</p></li>
+          <li>In contrast, <span class="inline_code">for</span> loops automatically stop when they reach the end of their assigned list</li>
+          <li><span class="inline_code">range()</span> function can take a number and return a list of values increasing from 0 to that number, exclusive, e.x. <span class="inline_code">print range(11)</span> returns a [0,1,2,3,4,5,6,7,8,9,10] <b>not including 11</b></li>
+        </ul>
+      </div>
+      <p><a href="https://discussions.udacity.com/t/stage-2-webcasts/16001/10">Make a Game with Python</a></p>
+
+  <h3 class="NotesTitle">How to Solve Problems (<a href="XXX.py">relevant .py</a>)</h3>
+      
+      
 
 </div><!-- this will close the "Stage2" div -->     
         
