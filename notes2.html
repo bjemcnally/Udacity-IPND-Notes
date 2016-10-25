@@ -764,8 +764,39 @@
       <p>list2 now = [1, 2, 3, 4, [5, 6]]</p>
     </div>
   </div>
-  <p><b>While Loop 4 Quiz</b>
-  <br>This was tricky! Created a <a href="while_loop4.py">new .py</a> for this quiz</p>
+  <p>For this section, each quiz essentially required its own .py:
+  <ul>
+    <li><a href="while_loop3.py">While Loop 3 Quiz</a></li>
+    <li><a href="while_loop4.py">While Loop 4 Quiz</a></li>
+    <li><a href="product_list.py">Product List Quiz</a></li>
+    <li><a href="greatest.py">Greatest Quiz</a></li>
+    <li><a href="strings_to_list.py">Strings to List Quiz</a>
+      <p>We are going to have to turn the string passed into our MadLibs function into a list. Introduce a new method, <span class="inline_code">.split()</span></p>
+      <p><span class="inline_code">string_to_split.split(seperator)</span> will allow us to split a list into individual strings</p>
+      <p>"seperator" is optional and, if omitted, split will split on single space characters, example:</p>
+      <div class="Code">
+        <p>test_string = "I am a NOUN"
+        <br>test_string.split()</p>
+      </div>
+      <p>returns: ["I", "am", "a", "NOUN"], a list with each individual word
+      </li>
+    <li>Mad Libs: Take two
+      <p>Another new function: <span class="inline_code">" ".join(name_of_list)</span>
+      <br>between the quotes you indicate what you will be joining on, e.x. " " is a blank space</p></li>
+    <li><a href="words_in_pos.py">Words in Position Quiz</a></li>
+    <li><a href="putting_together.py">Putting It All Together Quiz</a>
+      <p>Basic idea:
+        <br>turn string into list
+        <br>iterate over it
+        <br>check if current iteration is in part_of_speech list
+        <br>if yes, replace word with new word, keeping punctuation and adding it to our new list, e.x. replaced = []</p></li>
+    <li>Raw Input
+      <p>Another function, example: <span class="inline_code">user_input = raw_input("Type in a word ")</span>
+      <br>string in parentheses = user prompt
+      <br>input is assigned to a new variable</p></li>
+    <li>Running Mad Libs, <a href="mad_libs_generator.py">.py provided by Udacity</a></li>
+  </ul>
+
 
   
       
