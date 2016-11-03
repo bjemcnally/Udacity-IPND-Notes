@@ -69,11 +69,43 @@
       </ol></p>
 
       <p><b>Where Does Webbrowser Come From?</b>
-      <br>Inside Python (that we downloaded) is a file called webbroswer</p>
+      <br>Inside Python (that we downloaded) is a file or module called webbroswer</p>
       <p>Inside that is a function called open</p>
       <p>Same for file called time that contains a variety of useful functions
-      <br>including <span class="inline_code">ctime</span> which tells us the current time, and <span class="inline_code">sleep</span>
-      </p>
+      <br>including <span class="inline_code">ctime</span> which tells us the current time, and <span class="inline_code">sleep</span> which suspends program for a little bit</p>
+      <p>How do these work? The details are hidden from us, i.e. <b>abstraction</b>. Allows us to focus on the program we want to write and use more complex functions simply by reading their documentation! </p>
+      <p><a href="https://docs.python.org/2.7/library/index.html">Python Standard Library</a> explains built-in Python features and their parameters, etc.</p>
+      <p>Secret Message program (<a href="secret_message.py">relevant .py</a>)
+      <br>Renames files!</p>
+      <p>We want our program to:</p>
+        <ol>
+          <li>Get all the file names
+            <p>Google "find filenames in a folder in Python"</p>
+              <p><span class="inline_code">os.listdir()</span> will get you everything that's in a directory - files and directories
+              <br>module in Python called os (for operating system) that contains a function listdir which lists everything in a given directory</p>
+              <p>takes in a file path and returns list of strings of the filenames:</p>
+                <div class="Code">
+                  <p>import os</p>
+                  <p>os.listdir(r"C:\Users\bjerickson\Desktop\prank")</p>
+                </div></li>
+          <li>For each file, rename it!
+            <p>Look through <a href="https://docs.python.org/2/library/os.html">documentation for os module</a>, which function can we use to rename files? <span class="inline_code">rename()</span>, it takes in 'source' or current name of the file and changes it to 'destination' or new name</p>
+            <p>use <span class="inline_code">translate</span> function that operates on strings and takes up to 2 arguments: a table which translates one set of characters to another, since we don't have that, we simply input 'None'. The other parameter is a list of characters to remove.</p>
+            <p><span class="inline_code">os.getcwd()</span> retrieves current working directory (cwd)</p>
+            <p><span class="inline_code">os.chdir()</span> changes working directory</p></li>
+        </ol>
+        <p>What would happen if:
+          <br>We try to rename a file that does not exist?
+          <br>We try to rename a file to a name that already exists in the folder?</p>
+        <p>In both cases we will get an error called an <b>Exception</b> (we will revisit this idea later!)</p>
+        <p><b>When Functions Do Not Suffice</b></p>
+        <p>Define a <b>template</b> and record all of the data that needs to go into that template (e.x. make a separate .py for each movie). Instead, define a generic template and then say each movie is a type of that template, etc. --> <b>classes!</b></p>
+
+  <h3 class="NotesTitle">Lesson 2: Use Classes</h3>
+    <p><b>Draw Turtles (<a href="drawing_turtles.py">relevant .py</a>)</b></p>
+    <p>
+
+
 
 <!-- stopped inside "Where does webbroswer come from?" --> 
       
