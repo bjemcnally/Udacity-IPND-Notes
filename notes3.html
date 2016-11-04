@@ -103,7 +103,28 @@
 
   <h3 class="NotesTitle">Lesson 2: Use Classes</h3>
     <p><b>Draw Turtles (<a href="drawing_turtles.py">relevant .py</a>)</b></p>
+    <p>Inside Python Standard Library is a file/module called turtle (lowercase) and inside that is a class Turtle (uppercase)</p>
+    <p>A class is a "neatly packaged box that puts things together really well"</p>
+    <p>In .py: Turtle is a class, and brad, angie, and thomas are instances of that class
+    <br><b>class</b> kind of like a blueprint that can be used to build multiple buildings
+    <br><b>instances</b> or <b>objects</b> are like individual buildings made from that blueprint</p>
+    <p><b>Turtle-Mini Project</b>: draw a flower, fractals, or your initials!
+    <br><a href="turtle_mini_project.py">relevant .py</a></p>
+    
+    <p><b>Send Text (<a href="send_text.py">relevant .py</a>)</b></p>
+    <p>Write a program that sends text messages (cool!)</p>
+    <p><b>Twilio</b> is a Python package that sends text messages, but it does <em>not</em> come with the Python Standard Library! One of thousands that you can download and install. To do this: type <span class="inline_code">easy_install twilio</span> into CLI and hit enter (that's it!)</p>
+    <p>Python's <span class="inline_code">from</span> statement allowss you to import specific attributes from a module, e.x.:</p>
+    <div class="Code">
+      <p>from module_name import something</p>
+      <p>from twilio.rest import TwilioRestClient</p>
+    </div>
+    <p>For the second example above we are saying inside the folder "twilio" there is a folder called "rest" and inside that is a Python file with a class called "TwilioRestClient"</p>
+    <p>Remember that you call upon functions and classes in pretty much the same way (syntax-wise) because when you call a class what you are really doing is calling the <span class="inline_code">__init__</span> function within that class. This creates an instance that you can assign to a variable.</p>
+
+    <p><b>Profanity Editor</b>
     <p>
+    
 
 
 
@@ -111,7 +132,7 @@
       
 
 
-  
+
 </div><!-- this will close the "Stage3" div -->     
         
   <!-- <div>
