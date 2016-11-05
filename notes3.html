@@ -122,13 +122,48 @@
     <p>For the second example above we are saying inside the folder "twilio" there is a folder called "rest" and inside that is a Python file with a class called "TwilioRestClient"</p>
     <p>Remember that you call upon functions and classes in pretty much the same way (syntax-wise) because when you call a class what you are really doing is calling the <span class="inline_code">__init__</span> function within that class. This creates an instance that you can assign to a variable.</p>
 
-    <p><b>Profanity Editor</b>
-    <p>
+    <p><b>Profanity Editor (<a href="profanity_editor.py">relevant .py</a>)</b></p>
+    <p>Steps:</p>
+      <ol>
+        <li>Read text from a document
+          <p><span class="inline_code">open</span> function allows us to read the contents of a file. Returns an object of the file type. Syntax: <span class="inline_code">variable_name = open(file_location)</span></p>
+          <p><span class="inline_code">read</span> function is used next, syntax: <span class="inline_code">file_contents = variable_name.read()</span></p>
+          <p>Is is important to remember to close a file when you are done with it, syntax: <span class="inline_code">file_contents.close()</span></p></li>
+        <li>Check text for curse words
+          <p><a href="http://www.wdyl.com">What do you love?</a> is a website that will help us filter out curse words</p>
+          <p>Use <span class="inline_code">urllib</span> and <span class="inline_code">urlopen</span> (and close) to open a website using Python. <span class="inline_code">urllib</span> "helps us get data from websites"</p>
+        </li>
+      </ol>
+    <p><a href="explore_built-in_functions.py">Explore built-in functions mini-assignment</a></p>
+    <p>Connecting Ideas!</p>
+    <p>In all three examples above, we created instances/objects and then used those objects, e.x.:</p>
+      <div class="Code">
+        <p>brad = turtle.Turtle()
+          <br>brad.forward(100)</p>
+        <p>quotes = open(file)
+          <br>quotes.read()</p>
+        <p>connection = urllib.urlopen()
+          <br>connection.read()</p>
+      </div>
+
+  <h3 class="NotesTitle">Lesson 3: Make Classes</h3>
+    <p><b>Movie Website (<a href="media.py">relevant .py</a>, <a href="entertainment_center.py">another relevant .py</a>)</b></p>
+    <p>Use classes to build it! Create a class called Movie and decide what it should remember (e.x. title, storyline, poster image, link you Youtube trailer)</p>
+    <p><a href="https://google.github.io/styleguide/pyguide.html">Google Style Guide for Python</a> is full of useful information!!
+    <br>e.x. class names should be capitalized</p>
+    <p>Put class defintions in one file and then call the class in another file</p>
+    <p>New vocab words:</p>
+    <ul>
+      <li>Class</li>
+      <li>Instance</li>
+      <li>Constructor</li>
+
+    </ul>
+
     
 
 
-
-<!-- stopped inside "Where does webbroswer come from?" --> 
+<!-- stopped at "Defining __init__" --> 
       
 
 
