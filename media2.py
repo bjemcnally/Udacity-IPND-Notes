@@ -12,3 +12,9 @@ class Movie():
 
     def show_trailer(self):
         webbrowser.open(self.trailer_youtube_url)
+
+class TvShow():
+    """ Has title, season, episode, tv_station and function called get_local_listings """
+
+class Video():
+    """ 2 attributes: title and duration, that are common to TvShow and Movie classes """

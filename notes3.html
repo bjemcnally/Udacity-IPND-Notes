@@ -154,11 +154,46 @@
     <p>Put class defintions in one file and then call the class in another file</p>
     <p>New vocab words:</p>
     <ul>
-      <li>Class</li>
-      <li>Instance</li>
-      <li>Constructor</li>
-
+      <li>Class
+        <p>Can have both data and methods</p>
+      </li>
+      <li>Instance
+        <p>Versions of a class</p>
+      </li>
+      <li>Constructor
+        <p>When we create an instance of a class the class' constructor gets called which is essentially the <span class="inline_code">__init__</span> method inside the class.</p>
+      </li>
+      <li>Self</li>
+        <p>The constructor uses the keyword <span class="inline_code">self</span> which refers to the instance in question</p>
+      <li>Instance Variables</li>
+        <p>Variables associated with a specific instance as defined within <span class="inline_code">__init__</span>. They are unique to an object and can be accessed using the <span class="inline_code">self</span> keyword inside the class or the instance name outside of the class</p>
+      <li>Instance methods
+        <p>All of the functions inside the class that are associated with an instance and have the first argument as <span class="inline_code">self</span>.</p>
+      </li>
     </ul>
+    <p>This information is nicely summarized here:</p>
+    <img src="class_vocab_words.png" alt="Screenshot from 'Recap Vocab' video">
+    <p>When creating a new class we define an <span class="inline_code">__init__</span> function which tells Python to create space in memory to remember details for our new class
+    <br>It is a good idea to include <span class="inline_code">self</span> as a parameter in your <span class="inline_code">__init__</span> function! It is kind of like a generic placeholder name for the new instance you create and isn't <em>really</em> counted as a parameter. It is used to define <b>instance variables</b> inside the <span class="inline_code">__init__</span> function of your new class</p>
+    <p><b>Advanced ideas in Object Oriented Programming</b></p>
+    <p><b>Class variables</b> are associated with all instances of a class and are not specific to just one instance they can be accessed like this:</p>
+    <div class="Code">
+      <p>python_filename.Class_name.variable_name</p>
+      <p>media.Movie.valid_ratings</p>
+    </div>
+    <p>When you define a variable that is essentially a constant, Google Style Guide suggests you use all caps, e.x.: <span class="inline_code">VALID_RATINGS = ["G", "PG", "PG-13", "R"]</span></p>
+    <p>All classes come with preexisting class variables, e.x. <span class="inline_code">__doc__</span> which holds some documentation. If you define your own class this refers to the """ comments at the start of your class</p>
+    <div class="Code">
+      <p>class Movie():
+        """ The information you type here = __doc__ """</p>
+    </div>
+    <p>Can be accessed the same way as class variables above</p>
+    <p>Other predefined variables include <span class="inline_code">__name__</span> which refers to the name of the class (e.x. Movie) and <span class="inline_code">__module__</span> which refers to the name of the file in which the class was defined (e.x. media)</p>
+    <p><b>Inheritance (<a href="inheritance.py">relevant .py</a>)</b></p>
+    <p>One class can inherit variables from another</p>
+    <p><b>Updating Class Movie (<a href="media2.py">relevant .py</a>)</b></p>
+    <p>
+
 
     
 
