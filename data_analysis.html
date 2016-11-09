@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Intro to Programming Nanodegree Notes by bjemcnally</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="notes.css">
+</head>
+    
+<body>
+    
+<div class="Navigation">
+  <a href="http://www.udacity.com" target="_blank"><img src="udacity.png" alt="Udacity Icon" width="200" height="100"></a>
+  <h1>Intro to Programming Nanodegree Notes</h1>
+  <img src="waves.png" alt="waves" width="100" height="100" class="Center">
+  <h3 class="NotesTitle">bjemcnally | Fall 2016</h3>
+  <h3 class="NotesTitle">Use these buttons to navigate:</h3>
+  <div class="Nav">
+    <div class="Button">
+      <a href="index.html">Welcome</a>
+    </div>
+    <div class="Button">
+      <a href="notes.html#ZeroStage">Stage 0</a>
+    </div>
+    <div class="Button">
+      <a href="notes.html#FirstStage">Stage 1</a>
+    </div>
+    <div class="Button">
+      <a href="notes2.html">Stage 2</a>
+    </div>
+    <div class="Button">
+      <a href="notes3.html">Stage 3</a>
+    </div>
+    <div class="Button">
+      <a href="notes4and5.html#FourthStage">Stage 4</a>
+    </div>
+    <div class="Button">
+      <a href="notes4and5.html#FifthStage">Stage 5</a>
+    </div>
+    <div class="Button">
+      <a href="data_analysis.html">Data Analysis Elective</a>
+    </div>
+  </div>
+    <h3 class="NotesTitle">Comments &amp; Suggestions Welcome!</h3>
+</div>
+
+<div class="NotesMaster"><!-- this one surrounds all of the notes -->
+
+<div><!-- this surrounds all of the Elective notes -->
+<h2 class="StageTitle" id="FourthStage">Data Analysis Elective</h2>
+  <h3 class="NotesTitle">Lesson 0: Dictionaries (<a href="dictionaries.py">relevant. py</a>)</h3>
+    <p><b>Using Dictionaries</b></p>
+      <p>Dictionaries are another data type (like strings and lists)</p>
+      <p>Create using curly brackets: { and } </p>
+      <p>Entries in a dictionary are key:value pairs, e.x.: <span class="inline_code">{'hydrogen':1, 'helium':2}</span></p>
+      <p><b>Keys</b> can be any immutable value: strings, numbers, etc.</p>
+      <p><b>Values</b> can by any value</p>
+      <p>Recall that strings are immutable and lists are mutable. Dictionaries are also mutable: we can add new key:value pairs and we can change the values of values (lol)</p>
+      <p>Recall that we can index strings (string_name[character#]) and lists (list_name[value#]). For dictionaries the syntax is different: dictionary_name[key] and the value associated with that key is returned</p>
+      <p>Like with lists, we can replace the value associated with a particular key (again, they are mutable), e.x. <span class="inline_code">dictionary_name[key] = new_value</span></p>
+      <p>Elements in a dictionary are not ordered so when we print it out they may appear in a different order than originally written</p>
+      <p><b>KeyError</b> indicates that a particular element is not in the dictionary</p>
+      <p>Like lists, we can use <span class="inline_code">in</span> to determine if a particular element is in our dictionary</p>
+      <p>To add an element...</p>
+        <div class="Code">
+            <p>elements = { 'hydrogen': 1, 'helium': 2, 'carbon': 6 }</p>
+            <p>elements['lithium'] = 3</p>
+        </div>
+      <p>Generically speaking the syntax is: <span class="inline_code">dictionary_name['new_key'] = new_value</span></p>
+      <p>The same syntax is used to modify an assigment!</p>
+    <p><b>Population Quiz (<a href="population_quiz.py">relevant .py</a>)</b></p>
+    <p><b>A Noble Gas (<a href="noble_gas.py">relevant .py</a>)</b></p>
+    <p>A dictionary can be an element in a dictionary and individual values in the element dictionary can be indexed (as we did with elements within a list that is an element in a list)</p>
+    <div class="InterestingNotes">
+      <p>Notes from a recorded session regarding dictionaries in Python:</p>
+      <ul>
+        <li><span class="inline_code">print dictionary_name.keys()</span> returns a list of all of the keys used in a dictionary</li>
+      </ul>
+    </div>
+
+  <h3 class="NotesTitle">Lesson 1: Data Analysis Process</h3>
+    <p><b>Data Analysis Process</b></p>
+    <ol>
+      <li>Question you want to answer or problem you want to solve</li>
+      <li>Data wrangling: data acquisition and data cleaning</li>
+      <li>Data exploration: get familiar with data, build intuition, and find patterns</li>
+      <li>Draw conclusions or make predictions, usually requires statistics or machine learning</li>
+      <li>Communicate findings: blog post, paper, email, PowerPoint, conversatio. Data visualization is almost always useful here!</li>
+    </ol>
+    <p>This process is not necessarily linear! Sometimes data acquisition happens before you generate your question, etc.</p>
+    <p>
+
+</div>
+          
+  <!-- <div>
+    <a href="http://jigsaw.w3.org/css-validator/check/referer">
+    <img style="border:0;width:88px;height:31px" src="http://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!" /></a>
+  </div> NEED TO VERIFY THIS! -->
+
+</div><!-- this closes "NotesMaster" -->
+</body>
+</html>
+
+
