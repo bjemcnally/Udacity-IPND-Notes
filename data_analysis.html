@@ -81,13 +81,62 @@
     <p><b>Data Analysis Process</b></p>
     <ol>
       <li>Question you want to answer or problem you want to solve</li>
-      <li>Data wrangling: data acquisition and data cleaning</li>
+      <li>Data wrangling: data acquisition and data cleaning
+        <p>Can happen via file download, accessing an API, scraping a webpage and/or combining from different formats</p>
+      </li>
       <li>Data exploration: get familiar with data, build intuition, and find patterns</li>
       <li>Draw conclusions or make predictions, usually requires statistics or machine learning</li>
       <li>Communicate findings: blog post, paper, email, PowerPoint, conversatio. Data visualization is almost always useful here!</li>
     </ol>
     <p>This process is not necessarily linear! Sometimes data acquisition happens before you generate your question, etc.</p>
-    <p>
+    <p><b>IPython Notebook</b></p>
+    <p>allows you to combine code, plots, output, and descriptions into one easily readable document</p>
+    <p>To open a notebook, use CLI to navigate to the correct directory and then run the command: <span class="inline_code">jupyter notebook ipython_notebook_name.ipynb</span></p>
+    <p>This will open the notebook in the default browser</p>
+    <p><b>Pandas</b> is a software library used for data analysis, more on this lateR</p>
+    <p><b>CSVs</b></p> (L1_Starter_Code.ipynb)
+    <p>Comma separated values, like a spreadsheet without formulas, easy to manipulate using code</p>
+    <p>You can represent a CSV yas a list of rows:</p>
+      <ul>
+        <li>Each row can be a list</li>
+        <li>Each row can be a dictionary where keys are heading names</li>
+      </ul>
+    <p>From <a href="https://docs.python.org/2/library/csv.html">CSV</a> module documentation: the <span class="inline_code">csv</span> (or <span class="inline_code">unicodecsv</span>) module implements classes to read and write tabular data in CSV format uing <span class="inline_code">reader</span> and <span class="inline_code">writer</span> objects. Programmers can also read and write data in dictionary form using <span class="inline_code">DictReader</span> and <span class="inline_code">DictWriter</span> classes.</p>
+    <p>Using an <b>iterator</b> lets you write a <span class="inline_code">for</span> loop to access each element, but you can only loop over an iterator once. Iterators are useful when you don't know what is in your list (or whatever you want to iterate over).</p>
+    <p>More about iterators (<a href="https://www.codementor.io/python/tutorial/python-generators-and-iterators">source</a>):</p>
+    <ul>
+      <li>For loops loop over iterables (like lists)</li>
+      <li>iterables have <span class="inline_code">__iter__</span> functions</li>
+      <li><span class="inline_code">__iter__</span> functions return Iterators</li>
+      <li>Iterators make use of the <span class="inline_code">next</span> method to move from element to element within the assoicated iterable</li>
+      <li>Once an iterator runs out of things to return from the <span class="inline_code">next</span> function it raises the <span class="inline_code">StopIteration</span> exception whenever next is called</li>
+    </ul>
+    <p>Remember, anytime you find yourself copying and pasting code or writing two pieces of code that are very similar, it might be best to write a function instead!</p>
+    <p><b>Fixing Data Types</b></p>
+    <p><span class="inline_code">csv</span> library sees everything as strings, it's up to you to convert them to integers, dates, etc. (if you want)</p>
+    <p>It might be best to update datatypes up front to make things easier</p>
+    <p>When converting numbers stored as strings, it may be necessary to convert to floating point before converting to integer (depending on the nature of the data)</p>
+    <p><b>Questions about student data</b></p>
+    <p>e.x. How long do students take to submit projects?</p>
+    <p>What are 5 questions you can ask of these data? My answers:</p>
+    <ul>
+      <li>What proportion of students complete a course?</li>
+      <li>On average, how long does it take for students to complete a course?</li>
+      <li>On average, once a project is submitted, how long does it take to be evaluated? (in days)</li>
+      <li>For students who cancel their enrollment, what is the average length of their enrollment?</li>
+      <li>What proportion of student project submission receive 'DISTINCTION' rating?</li>
+    </ul>
+    <p>Other questions:</p>
+    <ul>
+      <li>How much time students spend taking classes</li>
+      <li>How time spent relates to lessons/projects completed</li>
+      <li>How engagment changes</li>
+      <li>How many times students submit project</li>
+    </ul>
+    <p>We will focus on: <b>How do students who pass their projects differ from those who don't?</b></p>
+    <p><b>Investigating the data</b></p>
+    <p>For each of the files, find the total number of rows in the csv and the number of unique students...</p>
+    <p>Video answer used <span class="inline_code">set()</span>... a module that provides classes for constructing and manipulating unordered collections of unique elements (more info <a href="https://docs.python.org/2/library/sets.html">here</a>)</p>
 
 </div>
           
