@@ -91,7 +91,8 @@
     <p>This process is not necessarily linear! Sometimes data acquisition happens before you generate your question, etc.</p>
     <p><b>IPython Notebook</b></p>
     <p>allows you to combine code, plots, output, and descriptions into one easily readable document</p>
-    <p>To open a notebook, use CLI to navigate to the correct directory and then run the command: <span class="inline_code">jupyter notebook ipython_notebook_name.ipynb</span></p>
+    <p>To open a notebook, use CLI to navigate to the correct directory and then run the command:</p>
+      <p><span class="inline_code">jupyter notebook ipython_notebook_name.ipynb</span></p>
     <p>This will open the notebook in the default browser</p>
     <p><b>Pandas</b> is a software library used for data analysis, more on this lateR</p>
     <p><b>CSVs</b></p> (L1_Starter_Code.ipynb)
@@ -137,6 +138,104 @@
     <p><b>Investigating the data</b></p>
     <p>For each of the files, find the total number of rows in the csv and the number of unique students...</p>
     <p>Video answer used <span class="inline_code">set()</span>... a module that provides classes for constructing and manipulating unordered collections of unique elements (more info <a href="https://docs.python.org/2/library/sets.html">here</a>)</p>
+    <p><b>Lesson 1: Notes so far</b></p>
+    <p>Got a little frustrated with the complete lack of explanations in Lesson 1 and how often I was getting stuck or just randomly guessing at answers. Took a day off and now I'm ready with a new game plan: go back through Lesson 1 to date and take notes on every part I didn't understand... Here we go!</p>
+    <p>On the left will be the code from L1_Starter_Code.ipynb and on the right will be my notes about it...</p>
+    <div class="CodeParent">
+      <div class="CodeLeft">
+        <p>import unicodecsv</p>
+        <p>enrollments = []
+        <br>f = open('enrollments.csv', 'rb')
+        <br>reader = unicodecsv.DictReader(f)
+        <br>for row in reader:
+        <br>&nbsp;&nbsp;enrollments.append(row)
+        <br>f.close()</p>
+        <p># this is functionally equivalent to:</p>
+        <p>with open('enrollments.csv', 'rb') as f:
+        <br>&nbsp;&nbsp;reader = unicodecsv.DictReader(f)
+        <br>&nbsp;&nbsp;enrollments = list(reader)</p>
+      </div>
+      <div class="CodeRight">
+        <ul>
+          <li><b>Unicode</b> from Google: "an international encoding standard for use with different languages and scripts, by which each letter, digit, or symbol is assigned a unique numeric value that applies across different platforms and programs"</li>
+          <li><b>CSV</b> from doc: "is the most common import and export format for spreadsheets and databases"</li>
+          <li><span class="inline_code">csv</span> module allows you to read, write, etc to CSVs</li>
+          <li><b>'r'</b> indicates the file should be read, the b in <b>'rb'</b> indicates binary format (binary data includes images, sound files,etc). <em>Not sure why this is necessary here...?</em></li>
+          <li><span class="inline_code">.DictReader(file_name.csv,fieldnames)</span> is a <span class="inline_code">class</span> within <span class="inline_code">csv</span>module that creates an object that maps the information read into a dictionary whose keys are given by the optional fieldnames parameter. If fieldnames is omitted, the values in the first row (i.e. header) of the CSV will be used as the fieldnames/keys</li>
+          <li>The code at right in generating a list (enrollments) where each list element is a row from the CSV that becomes a dictionary where the dictionary keys are taken from the header row</li>
+          <li><span class="inline_code">with</span> keyword is useful when dealing with files because it ensures the file is closed after it is used (you don't need to explicitly close it)</li>
+          </ul>
+      </div>
+    </div>
+      <p>Question 1 repeats this for the other two CSV files</p>
+      <p>Fixing Data Types</p>
+      <div class="CodeParent">
+        <div class="CodeLeft">
+          <p>from datetime import datetime as dt</p>
+          <p>def parse_date(date):
+          <br>&nbsp;&nbsp;if date == '':
+          <br>&nbsp;&nbsp;&nbsp;&nbsp;return None
+          <br>&nbsp;&nbsp;else:
+          <br>&nbsp;&nbsp;&nbsp;&nbsp;return dt.strptime(date, '%Y-%m-%d')</p>
+          <p>def parse_maybe_int(i):
+          <br>&nbsp;&nbsp;if i == '':
+          <br>&nbsp;&nbsp;&nbsp;&nbsp;return None
+          <br>&nbsp;&nbsp;else:
+          <br>&nbsp;&nbsp;&nbsp;&nbsp;return int(i)</p>
+          <p># Clean up the data types in 'enrollments'</p>
+          <p>for enrollment in enrollments:
+          <br>&nbsp;&nbsp;enrollment['cancel_date'] = parse_date(enrollment['cancel_date'])
+          <br>&nbsp;&nbsp;enrollment['days_to_cancel'] = parse_maybe_int(enrollment['days_to_cancel'])
+          <br>&nbsp;&nbsp;enrollment['is_canceled'] = enrollment['is_canceled'] == 'True'
+          <br>&nbsp;&nbsp;enrollment['is_udacity'] = enrollment['is_udacity'] == 'True'
+          <br>&nbsp;&nbsp;enrollment['join_date'] = parse_date(enrollment['join_date'])</p>
+        </div>
+        <div class="CodeRight">
+          <ul>
+            <li><b>Parsing</b> is the process of analysing a string of symbols</li>
+            <li><span class="inline_code">datetime</span> module supplies classes for manipulating dates and times in simple and complex ways with the focus on efficient attribute extraction for output formatting and manipulation</li>
+            <li><span class="inline_code">as</span> keyword lets you create a shorthand (e.x. type dt instead of datetime each time you use the module)</li>
+            <li><span class="inline_code">.strptime(date_string, format)</span> reformats the date from a string to the desired format (e.x. '%Y-%m-%d')</li>
+            <li><span class="inline_code">int()</span> turns strings into integers</li>
+          </ul>
+        </div>
+      </div>
+      <p>Problems in the Data / Question 3</p>
+      <p>This is before question 2 here because it changes the answer to 2 slightly</p>
+      <div class="CodeParent">
+        <div class="CodeLeft">
+          <p>for engagement_record in daily_engagement:
+          <br>&nbsp;&nbsp;engagement_record['account_key'] = engagement_record['acct']
+          <br>&nbsp;&nbsp;del[engagement_record['acct']]</p>
+        </div>
+        <div class="CodeRight">
+          <p>Changes header 'acct' in daily_engagement table to 'account_key' to match the two other tables</p>
+          <p>Essentially reassigns the key's name and the deletes the old key name</p>
+        </div>
+      </div>
+      <p>Investigating the Data / Question 2</p>
+      <div class="CodeParent">
+        <div class="CodeLeft">
+          <p>unique_enrolled_students = set()
+          <br>for enrollment in enrollments:
+          <br>&nbsp;&nbsp;unique_enrolled_students.add(enrollment['account_key'])
+          <br>len(unique_enrolled_students)</p>
+          <p># bc we already complete Question 3
+          <br># we can create a function to do this:</p>
+          <p>def find_unique_accounts(table_name):
+          <br>&nbsp;&nbsp;set_of_accounts = set()
+          <br>&nbsp;&nbsp;for each in table_name:
+          <br>&nbsp;&nbsp;&nbsp;&nbsp;set_of_accounts.add(each['account_key'])
+          <br>&nbsp;&nbsp;return set_of_accounts</p>
+        </div>
+        <div class="CodeRight">
+          <ul>
+            <li>The goal is to find the number of rows and the number of account keys in each table</li>
+            <li>A set is another data structure in Python (like lists) that is an unordered collection with no duplicate elements. Basic uses include membership testing (is X in my list?) and eliminating duplicate entries. <span class="inline code">set()</span> function can be used to create sets or an empty set (as done at left)</li>
+            <li>At left we create and empty set and then use a <span class="inline_code">for</span> loop to loop through each line of enrollments table (list of dictionaries) and add the account key to the set</li>
+            <li>For lists you use <span class="inline_code">.append()</span> while for sets you use <span class="inline_code">.add()</span></li>
+      </div>
+      </div>
 
 </div>
           
