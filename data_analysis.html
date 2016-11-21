@@ -234,15 +234,142 @@
             <li>A set is another data structure in Python (like lists) that is an unordered collection with no duplicate elements. Basic uses include membership testing (is X in my list?) and eliminating duplicate entries. <span class="inline code">set()</span> function can be used to create sets or an empty set (as done at left)</li>
             <li>At left we create and empty set and then use a <span class="inline_code">for</span> loop to loop through each line of enrollments table (list of dictionaries) and add the account key to the set</li>
             <li>For lists you use <span class="inline_code">.append()</span> while for sets you use <span class="inline_code">.add()</span></li>
+        </div>
       </div>
+      <p>Missing Engagement Records / Question 4</p>
+      <div class="CodeParent">
+        <div class="CodeLeft">
+          <p>for enrollment in enrollments:
+          <br>&nbsp;&nbsp;student = enrollment['account_key']
+          <br>&nbsp;&nbsp;if student not in engagement_unique_students:
+          <br>&nbsp;&nbsp;&nbsp;&nbsp;print enrollment
+          <br>&nbsp;&nbsp;&nbsp;&nbsp;break</p>
+        </div>
+        <div class="CodeRight">
+          <ul>
+            <li>Find and print student enrollment where the student is missing from daily engagement table.</li>
+            <li>For each individual record in enrollments table, find 'account_key' in enrollments. If that account key is not in engagement_unique_students, print record.</li>
+            <li>'Missing students' all canceled the same day they joined and days_to_cancel is 0</li>
+          </ul>
+        </div>
       </div>
+      <p>Checking for More Problem Records / Question 5</p>
+      <div class="CodeParent">
+        <div class="CodeLeft">
+          <p>count_surprising_records = 0
+          <br>for enrollment in enrollments:
+          <br>&nbsp;&nbsp;student = enrollment['account_key']
+          <br>&nbsp;&nbsp;if student not in engagement_unique_students \
+          <br>&nbsp;&nbsp;and enrollment['join_date'] != enrollment['cancel_date']:
+          <br>&nbsp;&nbsp;&nbsp;&nbsp;count_surprising_records += 1
+          <br>&nbsp;&nbsp;&nbsp;&nbsp;print enrollment
+          <br>print count_surprising_records</p>
+        </div>
+        <div class="CodeRight">
+          <ul>
+            <li>Find number of enrollments missing from engagement table where they stayed enrolled at least one day (join and cancel are not the same day)</li>
+            <li>These are all test accounts: 'is_udacity': True</li>
+          </ul>
+        </div>
+      </div>
+      <p>Tracking Down the Remaining Problems</p>
+      <p>IIRC This portion of the code was provided and it's all pretty straightforward</p>
+      <p>Refining the Question / Question 6</p>
+      <div class="CodeParent">
+        <div class="CodeLeft">
+          <p>paid_students = {}
+          <br>for each in non_udacity_enrollments:
+          <br>&nbsp;&nbsp;if not each['is_canceled'] or \
+          <br>&nbsp;&nbsp;each['days_to_cancel'] > 7:
+          <br>&nbsp;&nbsp;&nbsp;&nbsp;new_paid_key = each['account_key']
+          <br>&nbsp;&nbsp;&nbsp;&nbsp;new_paid_value = each['join_date']
+          <p>&nbsp;&nbsp;&nbsp;&nbsp;if new_paid_key not in paid_students or \
+          <br>new_paid_value > paid_students[new_paid_key]:
+          <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;paid_students[new_paid_key] = new_paid_value</p>
+          <p>print len(paid_students)</p>
+        </div>
+        <div class="CodeRight">
+          <ul>
+            <li>Create a dictionary (paid_students) containing all students who either haven't canceled yet or who remained enrolled for >7 days. keys should be account keys and values should be enrollment date</li>
+            <li>Take into account students who cancel and then re-enroll, only keep their most recent start date</li>
+            <li><span class="inline_code">if not</span> returns <span class="inline_code">False</span> if value is zero for numbers, length is 0 (for lists, dictionaries, etc), or value is <span class="inline_code">None</span>. Otherwise it returns <span class="inline_code">True</span></li>
+            <li>Put another way: "<span class="inline_code">if not</span> checks for truth" and asks a value "are you meaningful or not?"</li>
+            <li>value of is_canceled is either <span class="inline_code">True</span> or <span class="inline_code">False</span></li>
+            <li>As a <span class="inline_code">boolean</span> operator (like and or or), <span class="inline_code">not</span> just takes the opposite: not True is the same a False, etc.</li>
+            <li>If <em>either</em> returns <span class="inline_code">True</span>, continue to assign keys and values</li>
+        </div>
+      </div>
+      <p>Getting Data from First Week / Question 7</p>
+      <div class="CodeParent">
+        <div class="CodeLeft">
+          <p>def within_one_week(join_date, engagement_date):
+          <br>&nbsp;&nbsp;time_delta = engagement_date - join_date
+          <br>&nbsp;&nbsp;return time_delta.days < 7 and time_delta.days >= 0</p>
+
+          <p>paid_engagement_in_first_week = []
+          <br>for daily_record in daily_engagement:
+          <br>&nbsp;&nbsp;if daily_record['account_key'] in paid_students:
+          <br>&nbsp;&nbsp;&nbsp;&nbsp;keep_engagement = daily_record['account_key']
+          <br>&nbsp;&nbsp;&nbsp;&nbsp;join_date = paid_students[keep_engagement]<br>&nbsp;&nbsp;&nbsp;&nbsp;engage = daily_record['utc_date']
+          <br>&nbsp;&nbsp;&nbsp;&nbsp;if within_one_week(join_date, engage) == True:
+          <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;paid_engagement_in_first_week.append(daily_record)</p>
+          <p>len(paid_engagement_in_first_week)</p>
+        </div>
+        <div class="CodeRight">
+          <ul>
+            <li>Function returns <span class="inline_code">True</span> if a particular engagment record date is within 7 days of their join date</li>
+            <li>Create a list of rows from the engagement table including only rows where the student is one of the paid students, and the date is within one week of the student's join date.</li>
+            <li>This is my answer, which was different from the video answer, however, I obtained the same result so I'll leave it as is for now</li>
+          </ul>
+        </div>
+      </div>
+      <p>Exploring Student Engagement</p>
+      <div class="CodeParent">
+        <div class="CodeLeft">
+          <p>from collections import defaultdict</p>
+          <p>engagement_by_account = defaultdict(list)
+          <br>for engagement_record in paid_engagement_in_first_week:
+          <br>&nbsp;&nbsp;account_key = engagement_record['account_key']
+          <br>&nbsp;&nbsp;engagement_by_account[account_key].append(engagement_record)</p>
+
+          <p>total_minutes_by_account = {}
+          <br>for account_key, engagement_for_student in engagement_by_account.items():
+          <br>&nbsp;&nbsp;total_minutes = 0
+          <br>&nbsp;&nbsp;for engagement_record in engagement_for_student:
+          <br>&nbsp;&nbsp;&nbsp;&nbsp;total_minutes += engagement_record['total_minutes_visited']
+          <br>&nbsp;&nbsp;total_minutes_by_account[account_key] = total_minutes</p>
+
+          <p>import numpy as np</p>
+          <p>total_minutes = total_minutes_by_account.values()
+          <br>print 'Mean:', np.mean(total_minutes)
+          <br>print 'Standard deviation:', np.std(total_minutes)
+          <br>print 'Minimum:', np.min(total_minutes)
+          <br>print 'Maximum:', np.max(total_minutes)</p>
+        </div>
+        <div class="CodeRight">
+          <ul>
+            <li>This code was all provided, just taking notes here</li>
+            <li>First part: Create a dictionary of engagement grouped by student. The keys are account keys, and the values are lists of engagement records.</li>
+            <li><span class="inline_code">collections</span> is a module that contains "high-performance container datatypes"</li>
+            <li><span class="inline_code">defaultdict</span> is a "dict subclass that calls a factory function to supply missing values", used to "group a sequence of key-value pairs into a dictionary of lists". If they key already exists in the list, add the new value to the existing list element with that key...</li>
+            <li>Second part: Create a dictionary with the total minutes each student spent in the classroom during the first week. The keys are account keys, and the values are numbers (total minutes)</li>
+            <li><span class="inline_code">dictionary_name.items()</span> returns a list of the dictionary's key, value pairs that we loop through in the next line (this is required in order the loop a dictionary)</li>
+            <li>Syntax for looping through a dictionary:
+              <div class="Code">
+                <p>for key, value in dict.items():
+                <br>&nbsp;&nbsp;print(k,v)</p>
+              </div></li>
+            <li>Last part: Summarize the data about minutes spent in the classroom</li>
+            <li><span class="inline_code">dictionary_name.values()</span> returns a list of all of the values in the dictionary</li>
+            <li><span class="inline_code">np.mean(list_name)</span> etc. performs desired calculation</li>
+          </ul>
+        </div>
+      </div>
+
 
 </div>
           
-  <!-- <div>
-    <a href="http://jigsaw.w3.org/css-validator/check/referer">
-    <img style="border:0;width:88px;height:31px" src="http://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!" /></a>
-  </div> NEED TO VERIFY THIS! -->
+
 
 </div><!-- this closes "NotesMaster" -->
 </body>
