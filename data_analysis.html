@@ -162,7 +162,7 @@
           <li><span class="inline_code">csv</span> module allows you to read, write, etc to CSVs</li>
           <li><b>'r'</b> indicates the file should be read, the b in <b>'rb'</b> indicates binary format (binary data includes images, sound files,etc). <em>Not sure why this is necessary here...?</em></li>
           <li><span class="inline_code">.DictReader(file_name.csv,fieldnames)</span> is a <span class="inline_code">class</span> within <span class="inline_code">csv</span>module that creates an object that maps the information read into a dictionary whose keys are given by the optional fieldnames parameter. If fieldnames is omitted, the values in the first row (i.e. header) of the CSV will be used as the fieldnames/keys</li>
-          <li>The code at right in generating a list (enrollments) where each list element is a row from the CSV that becomes a dictionary where the dictionary keys are taken from the header row</li>
+          <li><em>The code at right in generating a list (enrollments) where each list element is a row from the CSV that becomes a dictionary where the dictionary keys are taken from the header row</em></li>
           <li><span class="inline_code">with</span> keyword is useful when dealing with files because it ensures the file is closed after it is used (you don't need to explicitly close it)</li>
           </ul>
       </div>
@@ -365,6 +365,60 @@
           </ul>
         </div>
       </div>
+      <p>Debugging Data Analysis Code / Question 8</p>
+      <div class="CodeParent">
+        <div class="CodeLeft">
+          <p>student_with_max_minutes = None
+          <br>max_minutes = 0</p>
+
+          <p>for student, total_minutes in total_minutes_by_account.items():
+          <br>&nbsp;&nbsp;if total_minutes > max_minutes:
+          <br>&nbsp;&nbsp;&nbsp;&nbsp;max_minutes = total_minutes
+          <br>&nbsp;&nbsp;&nbsp;&nbsp;student_with_max_minutes = student</p>
+
+          <p>print max_minutes</p>
+
+          <p>for engagement_record in paid_engagement_in_first_week:
+          <br>&nbsp;&nbsp;if engagement_record['account_key'] == student_with_max_minutes:
+          <br>&nbsp;&nbsp;&nbsp;&nbsp;print engagement_record
+        </div>
+        <div class="CodeRight">
+          <ul>
+            <li>Go through a similar process as before to see if there is a problem. Locate at least one surprising piece of data, output it, and take a look at it.</li>
+            <li>Copied from above: <span class="inline_code">dictionary_name.items()</span> returns a list of the dictionary's key, value pairs that we loop through in the next line (this is required in order the loop a dictionary)</li>
+            <li>I did not get the answer to this, so this is the solution code.</li>
+            <li>Here we loop through the total_minutes_by_account dictionary to find and print the highest value (max_minutes) and find the account key for this student (student_with_max_minutes</li>
+            <li>Then, we loop through paid_engagement_in_first_week list and print the engagement records for this student</li>
+            <li>
+          </ul>
+        </div>
+      </div>
+      <p>Lessons Completed in First Week / Question 9</p>
+      <div class="CodeParent">
+        <div class="CodeLeft">
+          <p></p>
+        </div>
+        <div class="CodeRight">
+          <ul>
+            <li>Adapt the code above to find the various stats for the number of lessons completed by each student during the first week. Try creating one or more functions to re-use the code above.</li>
+          </ul>
+        </div>
+      </div>
+
+<!-- Blank notes div:
+
+<div class="CodeParent">
+  <div class="CodeLeft">
+    <p></p>
+  </div>
+  <div class="CodeRight">
+    <ul>
+      <li></li>
+    </ul>
+  </div>
+</div>
+
+-->
 
 
 </div>
