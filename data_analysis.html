@@ -389,7 +389,9 @@
             <li>I did not get the answer to this, so this is the solution code.</li>
             <li>Here we loop through the total_minutes_by_account dictionary to find and print the highest value (max_minutes) and find the account key for this student (student_with_max_minutes</li>
             <li>Then, we loop through paid_engagement_in_first_week list and print the engagement records for this student</li>
-            <li>
+            <li>The problem was the the max minutes was higher than the number of minutes in a week so there must have been something wrong with the code. When that students' records were printed we noticed that there were more than 7 of them in paid_engagement_in_first_week.</li>
+            <li>To fix this she added "and time_delta.days >= 0" after time_delta.days < 7 in within_one_week function</li>
+            <li>Correct Maximum = 3564.73 or ~60 hours</li>
           </ul>
         </div>
       </div>
