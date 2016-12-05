@@ -398,14 +398,205 @@
       <p>Lessons Completed in First Week / Question 9</p>
       <div class="CodeParent">
         <div class="CodeLeft">
-          <p></p>
+          <p>from collections import defaultdict
+          <br>import numpy as np</p>
+          
+          <p>def group_data(data, key_name):
+            <br>&nbsp;&nbsp;grouped_data = defaultdict(list)
+            <br>&nbsp;&nbsp;for data_point in data:
+              <br>&nbsp;&nbsp;&nbsp;&nbsp;key = data_point[key_name]
+              <br>&nbsp;&nbsp;&nbsp;&nbsp;grouped_data[key].append(data_point)
+            <br>&nbsp;&nbsp;return grouped_data</p>
+            
+            <p>engagement_by_account = group_data(paid_engagement_in_first_week, 'account_key')</p>
+
+          <p>def sum_grouped_items(grouped_data, field_name):
+            <br>&nbsp;&nbsp;summed_data = {}
+            <br>&nbsp;&nbsp;for key, data_points in grouped_data.items():
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;total = 0
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;for data_point in data_points:
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;total += data_point[field_name]
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;summed_data[key] = total
+            <br>&nbsp;&nbsp;return summed_data</p>
+
+          <p>total_lessons2 = sum_grouped_items(engagement_by_account, 'lessons_completed')</p>
+
+          <p>def print_statistics(data):
+            <br>&nbsp;&nbsp;print 'Mean:', np.mean(data)
+            <br>&nbsp;&nbsp;print 'Standard deviation:', np.std(data)
+            <br>&nbsp;&nbsp;print 'Minimum:', np.min(data)
+            <br>&nbsp;&nbsp;print 'Maximum:', np.max(data)</p>
+
+          <p>print_statistics(total_lessons2.values())</p>
         </div>
         <div class="CodeRight">
           <ul>
             <li>Adapt the code above to find the various stats for the number of lessons completed by each student during the first week. Try creating one or more functions to re-use the code above.</li>
+            <li>group_data function takes in some data and groups it by some key name (here we generally use it to group each students' records together)</li>
+            <li><em>library Pandas has a built-in function that works in a similar way</em></li>
+            <li>sum_grouped_items takes in a dictionary (grouped_data) and creates a new dictionary where each students' grouped data is totaled (e.x. number of minutes spend on course in first week, etc.)</li>
+            <li>print_statistics function calculates and prints a few interesting stats</li>
+            <li><span class="inline_code">values.()</span> uses just the values from the dictionary and ignores the keys</li>
           </ul>
         </div>
       </div>
+
+      <p>Number of Visits in First Week</p>
+      <div class="CodeParent">
+        <div class="CodeLeft">
+          <p>def num_records(grouped_data, field_name):
+            <br>&nbsp;&nbsp;summed_data = {}
+            <br>&nbsp;&nbsp;for key, data_points in grouped_data.items():
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;total = 0
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;for data_point in data_points: 
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if data_point[field_name] > 0:
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;total += 1
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;summed_data[key] = total
+            <br>&nbsp;&nbsp;return summed_data</p>
+
+            <p>num_days_first_week = num_records(engagement_by_account, 'total_minutes_visited')
+            <br>print_statistics(num_days_first_week.values())</p>
+        </div>
+        <div class="CodeRight">
+          <ul>
+            <li>Find the mean, standard deviation, minimum, and maximum for the number of days each student visits the classroom during the first week.</li>
+            <li>num_records counts the number of records where a field_name (e.x. time spent studying) is greater than 0</li>
+          </ul>
+        </div>
+      </div>
+
+      <p>Splitting Out Passing Students / Question 11</p>
+      <div class="CodeParent">
+        <div class="CodeLeft">
+          <p>subway_project_lesson_keys = ['746169184', '3176718735']</p>
+          
+          <p>pass_subway_project = set()
+          <br>for each in paid_submissions:
+          <br>&nbsp;&nbsp;if each['lesson_key'] in subway_project_lesson_keys:
+          <br>&nbsp;&nbsp;&nbsp;&nbsp;if each['assigned_rating'] == 'PASSED' \
+          <br>&nbsp;&nbsp;&nbsp;&nbsp;or each['assigned_rating'] == 'DISTINCTION':
+          <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pass_subway_project.add(each['account_key'])</p>
+          
+          <p>rint str(len(pass_subway_project)) + " students passed subway project (this is correct)"</p>
+          
+          <p>passing_engagement = []
+          <br>non_passing_engagement = []</p>
+          
+          <p>for engagement_record in paid_engagement_in_first_week:
+          <br>&nbsp;&nbsp;if engagement_record['account_key'] in pass_subway_project:
+          <br>&nbsp;&nbsp;&nbsp;&nbsp;passing_engagement.append(engagement_record)
+          <br>&nbsp;&nbsp;else:
+          <br>&nbsp;&nbsp;&nbsp;&nbsp;non_passing_engagement.append(engagement_record)</p>
+          
+          <p>print len(passing_engagement)
+          <br>print len(non_passing_engagement)</p>
+        </div>
+        <div class="CodeRight">
+          <ul>
+            <li>Create two lists of engagement data for paid students in the first week. The first list should contain data for students who eventually pass the subway project, and the second list should contain data for students who do not. Find len of each.</li>
+            <li>Create a <span class="inline_code">set()</span> of account_keys for students who passed the subway project</li>
+            <li>Create a list of engagement records for those who did/n't pass and find its length</li>
+          </ul>
+        </div>
+      </div>
+
+      <p>Comparing Two Student Groups / Question 12</p>
+      <div class="CodeParent">
+        <div class="CodeLeft">
+          <p>passing_grouped = group_data(passing_engagement, 'account_key')
+          <br>non_passing_grouped = group_data(non_passing_engagement, 'account_key')</p>
+        </div>
+        <div class="CodeRight">
+          <ul>
+            <li>Compute some metrics you're interested in and see how they differ for students who pass the subway project vs. students who don't, e.x.: minutes spent in the classroom, lessons completed, days visited</li>
+            <li>After grouping the data by student for non/passing students by account key, the individual data points were summed and stats calculated for the metrics indicated above</li>
+          </ul>
+        </div>
+      </div>
+
+      <p>Making Histograms / Question 13</p>
+      <p>To make a histogram Python, you can use the matplotlib library which comes with Anaconda. e.x.:</p>
+        <div class="Code">
+          <p>data = [1, 2, 1, 3, 3, 1, 4, 2]</p>
+          
+          <p>%matplotlib inline
+          <br>import matplotlib.pyplot as plt
+          <br>plt.hist(data)</p>
+        </div>
+      <p>The line <span class="inline_code">%matplotlib inline</span> is specifically for IPYNB, if you are not using a notebook exlude this line and add <span class="inline_code">plt.show()</span> at the bottom to show the plot in a new window (e.x. <a href="histogram.py">histogram.py</a>)</p> 
+      <div class="CodeParent">
+        <div class="CodeLeft">
+          <p>%matplotlib inline
+          <br>import matplotlib.pyplot as plt</p>
+
+          <p>def make_histogram(list_name):
+            <br>plt.hist(list_name)</p>
+          
+          <p>passing_minutes_list = passing_minutes.values()
+          <br>non_passing_minutes_list = non_passing_minutes.values()</p>
+          
+          <p>print "Minutes spent in classroom for students who passed first project:"
+          <br>make_histogram(passing_minutes_list)</p>
+        </div>
+        <div class="CodeRight">
+          <ul>
+            <li>Make histograms of the three metrics we looked at earlier for both students who passed the subway project and students who didn't. You might also want to make histograms of any other metrics you examined.</li>
+            <li>I created a function to make histograms and then saved created a list for each set of data created in Question 12 (dictionary) using <span class="inline_code">.values()</span></li>
+            <li>The weird gaps in the Days Visited histograms are due to the number of bins used, we will fix this later</li>
+            <li>Probably a good idea to add <span class="inline_code">plt.hist(list_name)</span> to our <span class="inline_code">print_statistics</span>
+            function so the histograms show up next to the statistics</li>
+          </ul>
+        </div>
+      </div>
+
+      <p>Improving Plots and Sharing Findings / Question 14</p>
+      <p>Tentative conclusion: students who pass the subway project spend more minutes in the classroom during their first week</p>
+      <p>Need to use <em>statistics</em> to determine if these differences are real or due to random chance</p>
+      <p>Correlation does not imply causation</p>
+      <p><em>A/B Testing!</em></p>
+      <p>Making predictions based on data analysis results...<em>machine learning</em> can make predictions automatically, usually a lot better than those you can make by hand</p>
+      <p>Communicate findings: What findings are most interesting? How will you present them?</p>
+      
+      <p><b>Adding labels and titles</b></p>
+      <p>In matplotlib you can add axis labels and a title (note that histograms usually only need x-axis labels):</p>
+        <div class="Code">
+          <p>plt.xlabel("Label for x axis")
+          <br>plt.ylabel("Label for y axis")
+          <br>plt.title("Title of plot")</p>
+        </div>
+      
+      <p><b>Making plots look nicer with seaborn</b></p>
+      <p>To install seaborn, open terminal/CLI and type: <span class="inline_code">conda install seaborn</span></p>
+      <p>To use it import it using: <span class="inline_code">import seaborn as sns</span></p>
+      <p><b>Adding extra arguments to your plot</b></p>
+      <p>See documentation for hist function for more info. One example is to pass the <span class="inline_code">bins</span> argument which sets the number of bins used by your histogram, e.x.: <span class="inline_code">plt.hist(list_name, bins=20)</span>
+      <div class="CodeParent">
+        <div class="CodeLeft">
+          <p>import seaborn as sns</p>
+          <p>print 'white: Passing Students'
+          <br>plt.hist(passing_days_visited_list, bins=8, alpha=0.8, color="white", orientation="vertical", label="Passing Students")
+          <br>plt.xlabel("Number of Days")</p>
+          
+          <p>print 'green: Non-passing Students'
+          <br>plt.hist(non_passing_days_visited_list, bins=8, alpha=0.6, color="green", orientation="vertical", label="Non-Passing Students")
+          <br>plt.title("Distribution of Days Visited in First Week")</p>
+          
+          <p>plt.legend(loc='upper right')</p>
+        </div>
+        <div class="CodeRight">
+          <ul>
+            <li>Importing seaborn automatically makes it look nicer, but you can also play with other parameters as I did</li>
+            </ul>
+        </div>
+      </div>
+
+      <p><b>Data analysis and related terms (Data Science, Data Engineering, Big Data)</b></p>
+      <p>Data Science: similar to data analysis, more focused on building systems, may require more experience</p>
+      <p>Data Engineering: more focused on data wrangling, involves data storage and processing</p>
+      <p>Big Data: fuzzy term for "a lot" of data, data analysts, scientists, and engineers all work with "big data"</p>
+
+      <p><b>Conclusions</b></p>
+      <p>Additional libraries can make writing data analysis code much easier!</p>
 
 <!-- Blank notes div:
 
