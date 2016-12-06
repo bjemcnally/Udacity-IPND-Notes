@@ -569,7 +569,7 @@
       <p>To install seaborn, open terminal/CLI and type: <span class="inline_code">conda install seaborn</span></p>
       <p>To use it import it using: <span class="inline_code">import seaborn as sns</span></p>
       <p><b>Adding extra arguments to your plot</b></p>
-      <p>See documentation for hist function for more info. One example is to pass the <span class="inline_code">bins</span> argument which sets the number of bins used by your histogram, e.x.: <span class="inline_code">plt.hist(list_name, bins=20)</span>
+      <p>See documentation for hist function for more info. One example is to pass the <span class="inline_code">bins</span> argument which sets the number of bins used by your histogram, e.x.: <span class="inline_code">plt.hist(list_name, bins=20)</span></p>
       <div class="CodeParent">
         <div class="CodeLeft">
           <p>import seaborn as sns</p>
@@ -597,6 +597,102 @@
 
       <p><b>Conclusions</b></p>
       <p>Additional libraries can make writing data analysis code much easier!</p>
+
+  <h3 class="NotesTitle">Lesson 2: Numpy and Pandas for 1D Data</h3>
+
+    <p><b>Introduction</b></p>
+    <p>Numpy (numerical Python) and Pandas are two Python libraries, they take awhile to learn how to use, but they will make writing data analysis code a lot easier and code will run faster. We will use it for 1D data, e.x. a single column of a spreadsheet</p>
+
+    <p><b>Gapminder Data</b></p>
+    <p>Example questions:</p>
+      <ul>
+        <li>How has US employment varied over time? (or any other country)</li>
+        <li>What are the highest/lowest employment levels? Which countries have them? Where does the US fall on the spectrum?</li>
+        <li>How do these variables relate to each other?</li>
+        <li>Are there consistent trends across countries?</li>
+      </ul>
+
+    <p><b>1D Data in Numpy and Pandas</b></p>
+    <p>Recall from Lesson 1, the code we used to import data from CSV, generate a list using those data, and the generate a set() of unique student account keys and how long it takes to run... not only does Pandas require less code, it will run more quickly</p>
+    <p>First <span class="inline_code">import pandas as pd</span></p>
+    <p><span class="inline_code">new_file = pd.read_csv('filename.csv')</span> will read the csv</p>
+    <p>Pandas builtin <span class="inline_code">.unique()</span> function will generate a set of unique values from a particular column, e.x. <span class="inline_code">new_file['column_name'].unique()</span></p>
+
+    <p><b>Quiz: Numpy Arrays</b></p>
+    <p>1D data in Pandas = <b>series</b> and in Numpy = <b>array</b>, Pandas series have more features than Numpy arrays, but arrays are simpler so we will start with them. Array is similar to a Python List: you can access elements by position (<span class="inline_code">array_name[0]</span>), access a range of elements (<span class="inline_code">array_name[1:3]</span>, just like for lists, the upper bound is not inclusive!), and use <span class="inline_code">for</span> loops</p>
+    <p>Differences between Numpy arrays and Python lists: each element should have the same type (e.x. string, int, boolean, etc), contains convenient functions (mean(), std()), can be multidimensional (e.x. like making a list of lists in Python)</p>
+    <p>Recall that <span class="inline_code">array_name[:]</span> references the entire array (or Python list)</p>
+    <p><span class="inline_code">array_name.dtype</span> will tell you what kind of data the array contains (e.x. string, int, float,), for strings it will also tell you the length of the longest one in the array (S22 = longest string is 22 characters)</p>
+    <div class="Code">
+      <p>for item in array:
+        <br>&nbsp;&nbsp;print 'Some text, {}'.format(item)</p>
+    </div>
+    <p>The above code will loop through the array and print 'Some text,' followed by the item</p>
+    <p>Python's <span class="inline_code">.format()</span> function will find each occurrence of <span class="inline_code">{}</span> (curly brackets) and replace them as indicate in the parentheses (see above example)</p>
+    <p>After importing Numpy, you can do basic calculations on arrays:
+      <br><span class="inline_code">array_name.mean()</span> or <span class="inline_code">.std()</span> or <span class="inline_code">.max()</span> etc.</p>
+    <div class="CodeParent">
+      <div class="CodeLeft">
+        <p>def max_employment(countries, employment):
+        <br>&nbsp;&nbsp;max_country = None
+        <br>&nbsp;&nbsp;max_employment = 0</p>
+        <p>&nbsp;&nbsp;for each in range(len(countries)):
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;country = countries[each]
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;country_employment = employment[each]</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;if country_employment > max_employment:
+          <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;max_country = country
+          <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;max_employment = country_employment</p>
+        <p>&nbsp;&nbsp;return (max_country, max_employment)</p>
+      </div>
+      <div class="CodeRight">
+        <p>Loop through each and replace max values until max is found</p>
+        <p>Good to know: <b>If you can find a Numpy function to do what you want, you can always treat the arrays as a Python list and write code that way!</b></p>
+      </div>
+    </div>
+    <p>To solve this in Numpy:</p>
+    <div class="CodeParent">
+      <div class="CodeLeft">
+        <p>def max_employment2(countries, employment):
+          <br>&nbsp;&nbsp;index = employment.argmax()
+          <br>&nbsp;&nbsp;return (countries[index], employment[index])</p>
+      </div>
+      <div class="CodeRight">
+        <ul>
+          <li><span class="inline_code">.argmax()</span> finds the max and returns its position in the array! (this is what I was looking for)</li>
+        </ul>
+      </div>
+    </div>
+    <p>To create a Numpy array:</p>
+    <div class="Code">
+      <p>import numpy as np
+        <br>array_name = np.array(['first element', 'second element'
+        <br>&nbsp;&nbsp;])</p>
+    </div>
+    <p>What you are doing is first creating a Python list and then calling <span class="inline_code">np.array()</span> to convert it to an array</p>
+
+    <p><b>Quiz: Vectorized Operations</b></p>
+    <p>A vector is list of numbers and in linear algebra (and Numpy!) you can add two vectors of the same length, this is called <b>vector addition</b>. This sums the values in each index together vector1[0] + vector2[0] = vector3[0] (if vector1[0] = 2 and vector2[0] = 4 then vector3[0] = 6)</p>
+    <p>Note that the outcome is NOT list concatenation as in Python! These are arrays so they are treated differently!</p>
+
+    <p><b>Quiz: Multiplying by a Scalar</b></p>
+    <p>Scalar = a single number (e.x. 3)</p>
+    <p>vector = [1, 2, 3] and you multiply by three...
+      <br>for a Python list you'd get [1, 2, 3, 1, 2, 3, 1, 2, 3]
+      <br>but in linear algebra/Numpy you'd get [3, 6, 9]</p>
+
+    <p><b>Quiz: Calculate Overall Completion Rate</b></p>
+    <p>More vectorized operations: +, -, *, /, **</p>
+    <p>If you have a vector of booleans you can perform logical operations using symbols: ampersand (and), | (or), ~ (not)</p>
+    <p>You can also use standard comparison operations: >, >=, ==, !=, etc.</p>
+    <p>Using vectorized operations makes for cleaner code and is often faster than using a loop when working with 2+ vectors</p>
+    <p>My answer to this quiz is in my Lesson 2 jupyter notebook</p>
+
+    <p><b>Quiz: Standardizing Data</b></p>
+    <p>How does one data point compare to the rest? e.x. employment in US versus other countries</p>
+    <p>To do this, convert each data point to the number of standard deviations away from the mean (+/-)</p>
+    <p>Find mean and stdev then create a new array where each data point has been replaced as indicated above (see jupyter notebook)</p>
+
+    <p><b>Quiz: Numpy Index Arrays</b></p>
 
 <!-- Blank notes div:
 
