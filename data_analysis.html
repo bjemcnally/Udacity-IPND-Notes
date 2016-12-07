@@ -693,6 +693,55 @@
     <p>Find mean and stdev then create a new array where each data point has been replaced as indicated above (see jupyter notebook)</p>
 
     <p><b>Quiz: Numpy Index Arrays</b></p>
+    <p>Suppose you have two Numpy arrays of the same length, and the second contains booleans (an <em>index array</em>, it tells you which elements of the first array to keep), e.x.:</p>
+    <div class="Code">
+      <p>a = [1, 2, 3, 4, 5]
+      <br>b = [F, F, T, T, T]
+      <br>a[b] --> [3, 4, 5]</p>
+    </div>
+    <p>In the above case, we kept every number > 2. There are two potential ways to make an index array to help do this: <span class="inline_code">b = a > 2</span> or <span class="inline_code">a[a>2]</span>. The second is a clear way of saying "keep all the elements of a that are > 2": a is an array and "a > 2" is a vectorized operation that returns an array of booleans (i.e. generates an index array to compliment a). This is faster than writing a loop, although both will accomplish the same goal.</p>
+    <p>For quiz, see relevant portion of Lesson_2.ipynb</p>
+    
+    <p><b>Quiz: + vs. +=</b></p>
+    <p>+= modifies the existing array</p>
+    <p>+ adds to the array creating a <b>new</b> array!</p>
+
+    <p><b>Quiz: In-Place vs Not In-Place</b></p>
+    <p>+= operates in-place while + does not</p>
+    <p>i.e. += is storing the new values in the same place the original values were stored, rather than creating a new array to store them in</p>
+    <p>Unlike Python lists, with arrays, <b>slice</b> refers to a <b>view</b> of the original array. It will look like a new array, but if you modify it, the original array changes:</p>
+    <div class="Code">
+      <p>import numpy as np
+        <br>a = np.array([1, 2, 3, 4, 5])
+        <br>slice = a[:3] # slice = [1, 2, 3]
+        <br>slice[0] = 100 # slice = [100, 2, 3]
+        <br>print a # a = [100, 2, 3, 4, 5]</p>
+    </div>
+
+    <p><b>Quiz: Pandas Series</b></p>
+    <p>A series is similar to a Numpy array, but with extra functionality, e.x.: if you have a series "s" then <span class="inline_code">s.describe()</span> will print out mean, standard deviation, median, and some other statistics about your series (COOL!)</p>
+    <p>Similarities between series and arrays: everything we just learned about arrays will also work on series (accessing elements, looping, convenient functions like mean() and max(), vectorized operations</p>
+    <p>A hint for this quiz: <b>You can add booleans in Python! True = 1 and False = 0 so True + True = 2, etc.</b></p>
+    <p>See Lesson_2.ipynb for my answer. Turns out these two variables are positively correlated!</p>
+    <p>One last note, making a Pandas Series is very similar to creating a Numpy array. Start with a Python list:</p>
+    <div class="Code">
+      <p>import pandas as pd</p>
+      <p>series_name = pd.Series([1, 2, 3, 4])</p>
+    </div>
+
+    <p><b>Quiz: Series Indexes</b></p>
+    <p>The main difference between Series and Arrays is that Pandas Series have an <b>Index</b>. Series are like a cross between a list and a dictionary. For arrays we have been using one to store country names and a second to store numerical data (e.x. life expectancy), but this isn't not necessary for Series because they can store both, kind of like making a list with two lists: the first is the data (values, data) and the second is the country name (keys, indexes). (see Lesson_2..ipynb)</p>
+    <p>The values are stored in order and you can access them by position</p>
+    <p>You can also use <span class="inline_code">.loc[index_name]</span> to look up values by their indexes: <span class="inline_code">series_name.loc[index_name]</span> so you don't need to know the position in the list where the data exists</p>
+    <p>For Series square brackets <span class="inline_code">[]</span> access elements <em>by position</em> (by default if indexes are not assigned)</p>
+    <p>Pandas has <span class="inline_code">series_name.iloc[0]</span> which is functionally the same as <span class="inline_code">series_name[0]</span>, except that the first is more clean</p>
+
+    <p><b>Quiz: Vectorized Operations and Series Indexes</b></p>
+    <p>When you add two Numpy arrays, you're adding by position. How does this work for Series?</p>
+    <p>Indexes are matched then added (or subtracted or whatever). Only matching indexes are added, etc. For values that don't overlap you get <span class="inline_code">NaN</span> = not a number</p>
+
+    <p><b>Filling Missing Values</b></p>
+    <p>What if we don't want <span class="inline_code">NaN</span>?</p>
 
 <!-- Blank notes div:
 
