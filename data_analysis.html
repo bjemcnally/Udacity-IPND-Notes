@@ -742,6 +742,19 @@
 
     <p><b>Filling Missing Values</b></p>
     <p>What if we don't want <span class="inline_code">NaN</span>?</p>
+    <p><span class="inline_code">series_name.dropna()</span> will exclude the NANs from the resulting series (see jupyter notebook)</p>
+    <p>What if you want to treat missing values as 0 instead?</p>
+    <p><span class="inline_code">series_name.fallna(value = 0)</span> will replace all NANs with the specified value (in this case 0), but this isn't quite what we want...</p>
+    <p><p><span class="inline_code">series1.add(series2, fill_value=0)</span> will do the trick!</p>
+
+    <p><b>Quiz: Pandas Series Apply()</b></p>
+    <p>If you want to use non built-in calculations (other than .mean() or +)...</p>
+    <ol>
+      <li>Treat the series as a list (for loops, etc)</li>
+      <li>Use the function <span class="inline_code">.apply()</span>, it takes a series and a function and returns a new series: <span class="inline_code">series_name.apply(function_name)</span></li>
+    </ol>
+    
+
 
 <!-- Blank notes div:
 
