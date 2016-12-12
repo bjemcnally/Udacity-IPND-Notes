@@ -788,9 +788,53 @@
           <br>to accesss the data in row 1, column 3 of a 2D array [counting from 0!] use: array_name[1, 3] vs array of arrays: array_name[1][3]
           <br>You can also use a slice [1:3, 4:7] to access parts of the 2D array
           <br>The general syntax is <em>[row, column]</em></li>
-        <li><span class="inline_code">mean()</span> and other functions work on an entire array, calculating the mean (or whatever) of all of the values, regardless of what column or row they were in</li>
+        <li><span class="inline_code">.mean()</span> and other functions work on an entire array, calculating the mean (or whatever) of all of the values, regardless of what column or row they were in</li>
       </ul>
     
+    <p><b>Quiz: Numpy Axis</b></p>
+    <p>What if you want to calculate <span class="inline_code">.mean()</span>, etc. by row or column instead of using the entire 2D array?</p>
+    <p>Most functions built into Numpy take an axis argument for this reason, e.x. <span class="inline_code">array_name.mean(axis=0)</span>. Axis can be either 0 or 1. Axis = 0 calculates the function for each column. Axis = 1 calculates the function for each row. The output is an array where each value corresponds to each col/row mean (or whatever)</p>
+
+    <p><b>Numpy and Pandas Data Types</b></p>
+    <p>Recall that each element in an array is expected to have the same type 
+    (<span class="inline_code">.dtype</span>). If they are not the same, each element will be converted to a string! This is a benefit of DataFrames, each column is assumed to be a different type! DataFrames also have indexes similar to Pandas Series, there is an index value for each row and a name for each column. Create a DataFrame from a dictionary:</p>
+    <div class="Code">
+      <p>import pandas as pd</p>
+      <p>new_dataframe = pd.DataFrame({
+        <br>&nbsp;&nbsp;'key1': [value1, value2, value3],
+        <br>&nbsp;&nbsp;'key2': [value1, value2, value3]
+        <br>})</p>
+    </div>
+    <p>This will map column names to lists of values for that column. When you <span class="inline_code">print</span> the DataFrame it is displayed in a nice table. (COOL)</p>
+    <p>Now you can take the <span class="inline_code">.mean()</span> of the DataFrame and it will take the mean of the numerical columns and ignore the others</p>
+    <p>Recall that you can add booleans therefore you can also apparently take their mean?</p>
+    <p>You can also use the axis argument to take the mean of each row instead, although it will only work if your rows all contain numerical data</p>
+
+    <p><b>Quiz: Accessing Elements of a DataFrame</b></p>
+    <p>You can use index argument for DataFrames to add titles to your rows (if applicable). Otherwise they default to numbers (0, 1, 2, etc).</p>
+    <p>As for Series, you use <span class="inline_code">.loc(index_name)</span> to access a row by its index or position. You can access individual cells using <span class="inline_code">.iloc[row, column]</span>.</p>
+    <p>I think the difference is that .iloc() takes numerical values and .loc() takes indexes (col and row names)</p>
+    <p>You can use <span class="inline_code">.values()</span> to get a 2D Numpy array containing <em>only the values</em> from your DataFrame. This would be useful if you wanted to take the mean of all of the values (if this was relevant to your data)</p>
+
+    <p><b>Loading Data into a DataFrame</b></p>
+    <p>DataFrames are particularly good for representing the contents of a CSV file!</p>
+    <p><span class="inline_code">pd.read_csv('filename.csv')</span> takes in a CSV and loads it into a DataFrame:</p>
+    <div class="Code">
+      <p>import pandas as pd</p>
+      <p>new_dataframe = pd.read_csv('filename.csv')</p>
+    </div>
+    <p><span class="inline_code">dataframe_name.head()</span> will print out the first 5 lines so you can take a look (see Jupyter notebook)</p>
+    <p><span class="inline_code">dataframe_name.describe()</span> will show some statistics about each column</p>
+
+    <p><b>Quiz: Calculating Correlation</b></p>
+    <p><b>Pearson's r</b>
+    <br>r = average of (x in std units) x (y in std units)</p>
+    <br>First standardize each variable (convert to number of std dev above or below the mean), then multiply each pair of values and take the average.</p>
+    <p>A positive result (r) indicates correlation (both increase or both decrease). Negative means that as one increases, the other decreases or vice versa.</p>
+    <p>r ranges from -1 to +1, near 0 indicates that the variables are not strongly correlated.</p>
+    <p>Pearson's r only measures linear correlation!</p>
+    <p>When standardizing x and y, you need to include the argument ddof=0 in Pandas std dev function: <span class="inline_code">variable.std(ddof=0)</span> this argument controls whether the corrected or uncorrected std dev is taken (0 --> uncorrected).
+
 
 
 <!-- Blank notes div:
