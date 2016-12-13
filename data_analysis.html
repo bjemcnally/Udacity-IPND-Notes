@@ -833,7 +833,38 @@
     <p>A positive result (r) indicates correlation (both increase or both decrease). Negative means that as one increases, the other decreases or vice versa.</p>
     <p>r ranges from -1 to +1, near 0 indicates that the variables are not strongly correlated.</p>
     <p>Pearson's r only measures linear correlation!</p>
-    <p>When standardizing x and y, you need to include the argument ddof=0 in Pandas std dev function: <span class="inline_code">variable.std(ddof=0)</span> this argument controls whether the corrected or uncorrected std dev is taken (0 --> uncorrected).
+    <p>When standardizing x and y, you need to include the argument ddof=0 in Pandas std dev function: <span class="inline_code">variable.std(ddof=0)</span> this argument controls whether the corrected or uncorrected std dev is taken (0 --> uncorrected).</p>
+
+    <p><b>Pandas Axis Names</b></p>
+    <p>Just like for 2D arrays, Pandas uses axis (e.x. axis = 0 or axis = 1). For Pandas you can also use axis = 'index' (columns) or axis = 'columns' (rows), e.x. taking <span class="inline_code">dataframe_name.mean(axis = 'columns')</span> will take the mean of each <em>ROW</em> not each column. "You are taking the mean ALONG the columns"" not OF the columns."</p>
+
+    <p><b>Quiz: DataFrame Vectorized Operations</b></p>
+    <p>Similar to those for 2D Numpy Arrays. Match up by index and column name rather than position.</p>
+    <p>Just like with arrays, adding partially overlapping DataFrames returns NaN where there is no overlap</p>
+    <p><span class="inline_code">.shift()</span> function appears to shift everything down one row. Documentation says you can specify how far to shift using the parameter <span class="inline_code">periods = 1</span> (one row).</p>
+
+    <p><b>Quiz: DataFrame Applymap()</b></p>
+    <p>Using non-built-in functions for DataFrames (like .apply() for Series above).</p>
+
+    <p><b>Quiz: DataFrame Apply</b></p>
+    <p>For DataFrames we use .applymap() because .apply does something different...</p>
+    <p>.applymap() applies to the entire DataFrame, .apply only to each individual column</p>
+    <p>For example, if you want to subtract the mean of the column from each value in that column you would use .apply() otherwise you might subtract the mean of the entire DataFrame, which wouldn't make sense (see jupyter notebook)</p>
+    <p>.apply() also takes an axis argument if you want to go by rows instead</p>
+    <p>Some built-in functions don't work on DataFrames so we can use .apply to call the function on each column seperately to get around this</p>
+
+    <p><b>Quiz: DataFrame Apply() Use Case 2</b></p>
+    <p>Instead of taking in a column and returning a column, your function could return a single value. In this case, calling it on a DataFrame will return a Series where each column corresponds to a single value</p>
+    <p>e.x. <span class="inline_code">dataframe_name.apply(np.max)</span> to return the max value for each column</p>
+
+    <p><b>Quiz: Adding a DataFrame to a Series</b></p>
+    <p>...Using vectorized operations</p>
+    <p>After looking at the result, I think it makes more sense to say "adding a series to DataFrame" (see Jupyter notebook)</p>
+    <p>Recall that each value in a series is effectively a column. Or, a Series is a 2D table with <em>only one row</em>!</p>
+    <p><span class="inline_code">.add()</span> function can take an argument that lets you treat the Series as a column with multiple rows if you want to get around the default</p>
+
+
+
 
 
 
