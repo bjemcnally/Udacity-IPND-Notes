@@ -879,6 +879,29 @@
       <p>It is important to note that this creates a custom data type (groupby object) that you are summing (or whatever). If there is no built-in function to do what you want, you can use .apply() and write your own.</p>
       <p>After you've taken the sum, you've essentially created a new Series that can be printed or plotted (or whatever)</p>
 
+    <p><b>Quiz: Calculating Hourly Entries and Exits</b></p>
+      <p>You can groupby() some column and then filter out the unrelated columns before performing an analysis:</p>
+      <div class="Code">
+        <p>dataframe_name.groupby(['group_by_this_col'])['col_to_keep1', 'col_to_keep2'].apply(function_name)</p>
+      </div>
+
+    <p><b>Quiz: Combining Pandas DataFrames</b></p>
+      <p>Pandas has an operation called merge that will combine two tables (DataFrames) into one</p>
+      <p>Check for duplicates before performing merge!</p>
+      <div class="Code">
+        <p>first_dataframe.merge(second_dataframe, on = 'match_via', how='left')</p>
+      </div>
+      <p>Note that how has options, 'left' tells the merge to keep any rows from 'first_dataframe' (which is on the left as written) even if there are no related values in the right table ('second_dataframe'). 'right' does the opposite, 'outer' keeps all rows from both tables, 'inner' is probably the most common and only keeps rows where 'match_via' is represented in BOTH DataFrames</p>
+      <p><em>What if you want to merge, but the columns have different names in the two DataFrames?</em></p>
+      <p>For example, what if one was labeled 'DATEn' while the other was 'date'?</p>
+      <p>You can specify left_on='DATEn' and right_on='date'. Once again, left and right correspond to how the .merge() was written.</p>
+
+    <p><b>Quiz: Plotting for DataFrames</b></p>
+      <p>Just like for Pandas Series, DataFrames have a .plot() method:dataframe_name.plot()</p>
+      <p>This will work, but using matplotlib is definitely a better idea!</p>
+
+
+
 
 
 
